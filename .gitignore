@@ -1,0 +1,5 @@
+# Git ignore files
+
+.DS_Store
+.vscode
+*.css.map
