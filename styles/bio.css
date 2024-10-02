@@ -39,22 +39,29 @@ body {
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2");
   font-weight: 700;
 }
+section,
+footer {
+  padding: 0 16px;
+}
+
 .header {
   display: flex;
   flex-flow: column wrap;
+  gap: 1rem;
+  padding: 16px 0;
   color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
   background-color: #323232;
-  font-size: 0.625rem;
-  font-weight: 700;
-  line-height: 1.25rem;
 }
-@media (min-width: 321px) {
+@media (min-width: 768px) {
   .header {
     display: flex;
     flex-flow: row wrap;
   }
 }
-@media (min-width: 1921px) {
+@media (min-width: 1280px) {
   .header {
     display: flex;
     flex-flow: row wrap;
@@ -71,6 +78,9 @@ body {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
+}
+.nav__item:hover {
+  border-bottom: 2px #ffffff solid;
 }
 
 .hero {
@@ -89,33 +99,116 @@ body {
   height: 100%;
 }
 .hero__title {
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1.5rem 0 1rem 0;
   color: #ffffff;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2rem;
 }
 
 .about__title {
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1.5rem 0 1rem 0;
   color: #323232;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2rem;
+}
+.about__container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
 }
 .about__image {
   width: 100%;
 }
+.about__quote {
+  color: #323232;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
+.about__quote-author {
+  color: #323232;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
+.about__subtitle {
+  color: #323232;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
+.about__detail {
+  color: #323232;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
 
+.gallery {
+  background-color: #fafafa;
+}
 .gallery__title {
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: 1.5rem 0 1rem 0;
   color: #323232;
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2rem;
+}
+.gallery__container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 1rem;
 }
 .gallery__image {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+  background-color: #323232;
+}
+.footer__container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 24px;
+}
+.footer__title {
+  padding: 1.5rem 0 1rem 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+.footer__icon-container {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 24px;
+}
+.footer__contact-container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 16px;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+.footer__org {
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
+.footer__copyright {
+  color: #ffffff;
+  background-color: #323232;
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1.25rem;
 }/*# sourceMappingURL=bio.css.map */

@@ -2,28 +2,28 @@
 
 // BREAKPOINTS
 @mixin tablet {
-    @media (min-width: ($breakpoint-max-mobile + 1)) {
+    @media (min-width: ($breakpoint-min-tablet)) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: ($breakpoint-max-tablet + 1)) {
+    @media (min-width: ($breakpoint-min-desktop)) {
         @content;
     }
 }
 
 // FONT STYLES - MOBILE
 @mixin font-header($color) {
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 0 1rem 0;
     color: $color;
     font-size: $font-size-large;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-demi;
     line-height: 2rem;
 }
 
 @mixin font-subheader($color) {
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 0 1rem 0;
     color: $color;
     font-size: $font-size-large;
     font-weight: $font-weight-demi;
@@ -37,11 +37,18 @@
     line-height: 1.125rem;
 }
 
-@mixin font-label {
+@mixin font-body-demi($color) {
+    color: $color;
+    font-size: $font-size-body;
+    font-weight: $font-weight-demi;
+    line-height: 1.125rem;
+}
+
+@mixin font-label($font-weight) {
     color: $primary-color-white;
     background-color: $primary-color-bandsite-black;
     font-size: $font-size-label;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight;
     line-height: 1.25rem;
 }
 

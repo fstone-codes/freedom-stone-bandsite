@@ -3,9 +3,17 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
+section,
+footer {
+    padding: 0 16px;
+}
+
 .header {
     @include flex-column;
-    @include font-label;
+    gap: 1rem;
+    padding: 16px 0;
+    @include font-body($primary-color-white);
+    background-color: $primary-color-bandsite-black;
 
     @include tablet {
         @include flex-row;
@@ -31,8 +39,9 @@
         list-style-type: none;
     }
 
-    //     &__item {
-    //     }
+    &__item:hover {
+        border-bottom: 2px $primary-color-white solid;
+    }
 }
 
 // .main {
@@ -63,33 +72,43 @@
         @include font-header($primary-color-bandsite-black);
     }
 
-    //     &__container {
-    //     }
+    &__container {
+        @include flex-column;
+        gap: 16px;
+    }
 
     &__image {
         width: 100%;
     }
 
-    //     &__quote {
-    //     }
+    &__quote {
+        @include font-body-demi($primary-color-bandsite-black);
+    }
 
-    //     &__quote-author {
-    //     }
+    &__quote-author {
+        @include font-body-demi($primary-color-bandsite-black);
+    }
 
-    //     &__subtitle {
-    //     }
+    &__subtitle {
+        @include font-body-demi($primary-color-bandsite-black);
+    }
 
-    //     &__detail {
-    //     }
+    &__detail {
+        @include font-body($primary-color-bandsite-black);
+    }
 }
 
 .gallery {
+    background-color: $secondary-color-alabaster;
+
     &__title {
         @include font-header($primary-color-bandsite-black);
     }
 
-    //     &__container {
-    //     }
+    &__container {
+        @include flex-column;
+        gap: 1rem;
+    }
 
     &__image {
         @include flex-row;
@@ -97,34 +116,51 @@
     }
 }
 
-// .footer {
-//     &__container {
-//     }
+.footer {
+    @include flex-column;
+    gap: 16px;
+    background-color: $primary-color-bandsite-black;
 
-//     &__title {
-//     }
+    &__container {
+        @include flex-column;
+        gap: 24px;
+    }
 
-//     &__icon-container {
-//     }
+    &__title {
+        @include font-header($primary-color-white);
+    }
 
-//     &__link {
-//     }
+    &__icon-container {
+        @include flex-row;
+        gap: 24px;
+    }
 
-//     &__icon {
-//     }
+    //     &__link {
+    //     }
 
-//     &__contact-container {
-//     }
+    //     &__icon {
+    //     }
 
-//     &__org {
-//     }
+    &__contact-container {
+        @include flex-column;
+        gap: 16px;
+        @include font-body($primary-color-white);
+    }
 
-//     &__details {
-//     }
+    &__org {
+        @include font-body-demi($primary-color-white);
+    }
 
-//     &__email {
-//     }
+    // &__details-container {
+    // }
 
-//     &__copyright {
-//     }
-// }
+    //     &__details {
+    //     }
+
+    //     &__email {
+    //     }
+
+    &__copyright {
+        @include font-label($font-weight-regular);
+    }
+}
