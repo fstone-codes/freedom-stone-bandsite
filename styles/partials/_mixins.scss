@@ -1,20 +1,14 @@
 @use "./variables" as *;
 
 // BREAKPOINTS
-@mixin mobile {
-    @media (max-width: $breakpoint-max-mobile) {
-        @content;
-    }
-}
-
 @mixin tablet {
-    @media (min-width: $breakpoint-max-mobile) and (max-width: $breakpoint-max-tablet) {
+    @media (min-width: ($breakpoint-max-mobile + 1)) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: $breakpoint-max-tablet) {
+    @media (min-width: ($breakpoint-max-tablet + 1)) {
         @content;
     }
 }
@@ -98,10 +92,26 @@
 // FLEXBOX
 @mixin flex-column {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
 }
 
 @mixin flex-space-around {
     display: flex;
     justify-content: space-around;
+}
+
+@mixin flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-items-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-flow: row wrap;
 }

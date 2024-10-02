@@ -26,9 +26,5 @@ ul {
 
 // GLOBAL GENERAL
 body {
-    @include mobile {
-        margin: 0 1rem;
-        width: 100%;
-    }
     font-family: "Avenir Next";
 }
