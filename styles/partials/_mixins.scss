@@ -1,0 +1,73 @@
+// BREAKPOINTS
+
+// FONT STYLES - MOBILE
+@mixin font-header($color) {
+    color: $color;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+    line-height: 2rem;
+}
+
+@mixin font-subheader($color) {
+    color: $color;
+    font-size: $font-size-large;
+    font-weight: $font-weight-demi;
+    line-height: 1.375rem;
+}
+
+@mixin font-body($color) {
+    color: $color;
+    font-size: $font-size-body;
+    font-weight: $font-weight-regular;
+    line-height: 1.125rem;
+}
+
+@mixin font-label($color) {
+    color: $color;
+    font-size: $font-size-label;
+    font-weight: $font-weight-bold;
+    line-height: 1.25rem;
+}
+
+// FONT STYLES - DESKTOP + TABLET
+@mixin font-dt-page-header($color) {
+    color: $color;
+    font-size: $font-size-dt-largest;
+    font-weight: $font-weight-bold;
+    line-height: 4.25rem;
+}
+
+@mixin font-dt-section-header($color) {
+    color: $color;
+    font-size: $font-size-dt-large;
+    font-weight: $font-weight-bold;
+    line-height: 2.75rem;
+}
+
+@mixin font-dt-subheader($color) {
+    color: $color;
+    font-size: $font-size-dt-medium;
+    font-weight: $font-weight-demi;
+    line-height: 2rem;
+}
+
+@mixin font-dt-body($color) {
+    color: $color;
+    font-size: $font-size-dt-body;
+    font-weight: $font-weight-regular;
+    line-height: 1.375rem;
+}
+
+@mixin font-dt-footer($color) {
+    color: $color;
+    font-size: $font-size-dt-body;
+    font-weight: $font-weight-regular;
+    line-height: 1.25rem;
+}
+
+@mixin font-dt-label($color) {
+    color: $color;
+    font-size: $font-size-dt-label;
+    font-weight: $font-weight-bold;
+    line-height: 1.25rem;
+}
