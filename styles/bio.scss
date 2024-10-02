@@ -3,8 +3,10 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-// .header {
-// }
+.header {
+    @include flex-column;
+    @include font-label;
+}
 
 // .logo {
 //     &__link {
@@ -14,13 +16,15 @@
 //     }
 // }
 
-// .nav {
-//     &__list {
-//     }
+.nav {
+    &__list {
+        @include flex-space-around;
+        list-style-type: none;
+    }
 
-//     &__item {
-//     }
-// }
+    //     &__item {
+    //     }
+}
 
 // .main {
 // }

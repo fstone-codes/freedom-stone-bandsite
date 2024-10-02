@@ -23,6 +23,12 @@ ul {
 body {
   font-family: "Avenir Next";
 }
+@media (max-width: 20rem) {
+  body {
+    margin: 0 1rem;
+    width: 100%;
+  }
+}
 
 @font-face {
   font-family: "Avenir Next";
@@ -38,4 +44,19 @@ body {
   font-family: "Avenir Next";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("woff2");
   font-weight: 700;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  background-color: #323232;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
 }/*# sourceMappingURL=bio.css.map */

@@ -1,7 +1,27 @@
+@use "./variables" as *;
+
 // BREAKPOINTS
+@mixin mobile {
+    @media (max-width: $breakpoint-max-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $breakpoint-max-mobile) and (max-width: $breakpoint-max-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-max-tablet) {
+        @content;
+    }
+}
 
 // FONT STYLES - MOBILE
 @mixin font-header($color) {
+    padding: 1.5rem 1rem 1rem 1rem;
     color: $color;
     font-size: $font-size-large;
     font-weight: $font-weight-bold;
@@ -9,6 +29,7 @@
 }
 
 @mixin font-subheader($color) {
+    padding: 1.5rem 1rem 1rem 1rem;
     color: $color;
     font-size: $font-size-large;
     font-weight: $font-weight-demi;
@@ -22,8 +43,9 @@
     line-height: 1.125rem;
 }
 
-@mixin font-label($color) {
-    color: $color;
+@mixin font-label {
+    color: $primary-color-white;
+    background-color: $primary-color-bandsite-black;
     font-size: $font-size-label;
     font-weight: $font-weight-bold;
     line-height: 1.25rem;
@@ -31,6 +53,7 @@
 
 // FONT STYLES - DESKTOP + TABLET
 @mixin font-dt-page-header($color) {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
     color: $color;
     font-size: $font-size-dt-largest;
     font-weight: $font-weight-bold;
@@ -70,4 +93,15 @@
     font-size: $font-size-dt-label;
     font-weight: $font-weight-bold;
     line-height: 1.25rem;
+}
+
+// FLEXBOX
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-space-around {
+    display: flex;
+    justify-content: space-around;
 }
