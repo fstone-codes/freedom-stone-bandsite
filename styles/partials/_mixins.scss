@@ -57,14 +57,14 @@
     padding: 3rem 2.25rem 2.25rem 2.25rem;
     color: $color;
     font-size: $font-size-dt-largest;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-demi;
     line-height: 4.25rem;
 }
 
 @mixin font-dt-section-header($color) {
     color: $color;
     font-size: $font-size-dt-large;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-demi;
     line-height: 2.75rem;
 }
 
@@ -97,31 +97,6 @@
 }
 
 // FLEXBOX
-@mixin flex-column {
-    display: flex;
-    flex-flow: column wrap;
-}
-
-@mixin flex-space-around {
-    display: flex;
-    justify-content: space-around;
-}
-
-@mixin flex-all-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin flex-items-center {
-    display: flex;
-    align-items: center;
-}
-
-@mixin flex-row {
-    display: flex;
-    flex-flow: row wrap;
-}
 
 @mixin flexbox($direction, $justify-content, $align-items) {
     display: flex;

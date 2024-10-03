@@ -14,7 +14,7 @@
     }
 
     @include desktop {
-        @include flexbox(row, normal, normal);
+        @include flexbox(row, center, normal);
     }
 }
 
@@ -90,6 +90,10 @@
         @include font-header(0, 0, $primary-color-white);
         position: relative;
         z-index: 1;
+
+        @include tablet {
+            @include font-dt-page-header($primary-color-white);
+        }
     }
 }
 
@@ -100,6 +104,10 @@
 
     &__title {
         @include font-header(0, 0, $primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-section-header($primary-color-bandsite-black);
+        }
     }
 
     &__container {
@@ -126,6 +134,10 @@
 
     &__detail {
         @include font-body($primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-body($primary-color-bandsite-black);
+        }
     }
 }
 
@@ -137,16 +149,28 @@
 
     &__title {
         @include font-header(0, 0, $primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-section-header($primary-color-bandsite-black);
+        }
     }
 
     &__container {
         @include flexbox(column, normal, normal);
         gap: 1rem;
+
+        @include tablet {
+            @include flexbox(row, center, center);
+        }
     }
 
     &__image {
         @include flexbox(row, normal, normal);
         width: 100%;
+
+        @include tablet {
+            width: 30vw;
+        }
     }
 }
 
@@ -163,6 +187,10 @@
 
     &__title {
         @include font-header(0, 0, $primary-color-white);
+
+        @include tablet {
+            @include font-dt-section-header($primary-color-white);
+        }
     }
 
     &__icon-container {
