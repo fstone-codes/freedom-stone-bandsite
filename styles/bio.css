@@ -21,7 +21,7 @@ ul {
 }
 
 body {
-  font-family: "Avenir Next";
+  font-family: "Avenir Next", sans-serif;
 }
 
 @font-face {
@@ -56,11 +56,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: normal;
-    align-items: normal;
+    align-items: center;
+    gap: 3.5rem;
     color: #ffffff;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
+    padding: 0 0 0 2rem;
+    height: 10vh;
   }
 }
 @media (min-width: 1280px) {
@@ -79,6 +82,10 @@ body {
   align-items: center;
 }
 .logo--footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
   padding-top: 2rem;
 }
 @media (min-width: 768px) {
@@ -87,6 +94,13 @@ body {
     top: 0;
     right: 0;
   }
+}
+.logo__link {
+  background-image: url(../assets/logos/Logo-bandsite.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 7.5rem;
+  height: 1.25rem;
 }
 .logo__image {
   width: 7.5rem;
@@ -98,14 +112,25 @@ body {
   justify-content: space-around;
   align-items: normal;
   list-style-type: none;
+  height: 5vh;
+}
+@media (min-width: 768px) {
+  .nav__list {
+    gap: 3.5rem;
+  }
 }
 .nav__item {
-  padding: 1rem 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: normal;
+  align-items: center;
+  height: 100%;
   width: 100%;
+}
+@media (min-width: 768px) {
+  .nav__item {
+    height: 100%;
+  }
 }
 .nav__link {
   text-decoration: none;
@@ -167,6 +192,12 @@ body {
   align-items: normal;
   gap: 1rem;
   padding: 1.5rem 1rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .about {
+    gap: 1.5rem;
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+  }
 }
 .about__title {
   padding: 0 0 0 0;
@@ -260,6 +291,11 @@ body {
   padding: 1.5rem 1rem 1rem 1rem;
   background-color: #fafafa;
 }
+@media (min-width: 768px) {
+  .gallery {
+    padding: 3rem 2.5rem 2.5rem 2.5rem;
+  }
+}
 .gallery__title {
   padding: 0 0 0 0;
   color: #323232;
@@ -289,6 +325,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 1.5rem;
   }
 }
 .gallery__image {
@@ -296,11 +333,12 @@ body {
   flex-direction: row;
   justify-content: normal;
   align-items: normal;
+  flex-grow: 1;
   width: 100%;
 }
 @media (min-width: 768px) {
   .gallery__image {
-    width: 30vw;
+    width: 30%;
   }
 }
 
