@@ -54,7 +54,6 @@
 
 // FONT STYLES - DESKTOP + TABLET
 @mixin font-dt-page-header($color) {
-    padding: 3rem 2.25rem 2.25rem 2.25rem;
     color: $color;
     font-size: $font-size-dt-largest;
     font-weight: $font-weight-demi;
@@ -86,6 +85,13 @@
     color: $color;
     font-size: $font-size-dt-body;
     font-weight: $font-weight-regular;
+    line-height: 1.25rem;
+}
+
+@mixin font-dt-footer-demi($color) {
+    color: $color;
+    font-size: $font-size-dt-body;
+    font-weight: $font-weight-demi;
     line-height: 1.25rem;
 }
 

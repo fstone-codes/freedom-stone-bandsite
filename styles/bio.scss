@@ -11,6 +11,7 @@
 
     @include tablet {
         @include flexbox(row, normal, normal);
+        @include font-dt-body($primary-color-white);
     }
 
     @include desktop {
@@ -19,19 +20,26 @@
 }
 
 .logo {
-    &--center {
+    &--header {
         @include flexbox(row, center, center);
     }
 
-    &--left {
+    &--footer {
         padding-top: 2rem;
+
+        @include tablet {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     }
 
     //     &__link {
     //     }
 
-    //     &__image {
-    //     }
+    &__image {
+        width: 7.5rem;
+    }
 }
 
 .nav {
@@ -47,7 +55,6 @@
     }
 
     &__link {
-        // padding: 1rem 0;
         text-decoration: none;
         color: $secondary-color-mercury;
     }
@@ -121,15 +128,27 @@
 
     &__quote {
         @include font-body-demi($primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-subheader($primary-color-bandsite-black);
+        }
     }
 
     &__quote-author {
         @include font-body-demi($primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-footer-demi($primary-color-bandsite-black);
+        }
     }
 
     &__subtitle {
         @include font-body-demi($primary-color-bandsite-black);
         padding-top: 0.5rem;
+
+        @include tablet {
+            @include font-dt-subheader($primary-color-bandsite-black);
+        }
     }
 
     &__detail {
@@ -157,6 +176,7 @@
 
     &__container {
         @include flexbox(column, normal, normal);
+        flex-wrap: wrap;
         gap: 1rem;
 
         @include tablet {
@@ -177,8 +197,12 @@
 .footer {
     @include flexbox(column, normal, normal);
     gap: 1rem;
-    padding: 1.5rem 1rem 1rem 1rem;
+    padding: 1.5rem 1rem;
     background-color: $primary-color-bandsite-black;
+
+    @include tablet {
+        position: relative;
+    }
 
     &__socials-container {
         @include flexbox(column, normal, normal);
@@ -213,10 +237,18 @@
         @include flexbox(column, normal, normal);
         gap: 1rem;
         @include font-body($primary-color-white);
+
+        @include tablet {
+            @include font-dt-footer($primary-color-white);
+        }
     }
 
     &__org {
         @include font-body-demi($primary-color-white);
+
+        @include tablet {
+            @include font-dt-footer-demi($primary-color-white);
+        }
     }
 
     // &__details-container {
@@ -235,5 +267,9 @@
 
     &__copyright {
         @include font-label($font-weight-regular);
+
+        @include tablet {
+            @include font-dt-footer($primary-color-white);
+        }
     }
 }
