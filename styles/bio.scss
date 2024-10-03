@@ -3,14 +3,9 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-// section,
-// footer {
-//     padding: 0 16px;
-// }
-
 .header {
     @include flexbox(column, normal, normal);
-    gap: 1rem;
+    padding-top: 1rem;
     @include font-body($primary-color-white);
     background-color: $primary-color-bandsite-black;
 
@@ -28,6 +23,10 @@
         @include flexbox(row, center, center);
     }
 
+    &--left {
+        padding-top: 2rem;
+    }
+
     //     &__link {
     //     }
 
@@ -42,21 +41,23 @@
     }
 
     &__item {
-        padding: 16px 0;
+        padding: 1rem 0;
+        @include flexbox(row, center, normal);
+        width: 100%;
     }
 
     &__link {
-        padding: 16px 0;
+        // padding: 1rem 0;
         text-decoration: none;
         color: $secondary-color-mercury;
     }
 
-    &__item &__link:hover {
+    &__item:hover {
         border-bottom: 2px $primary-color-white solid;
         color: $primary-color-white;
     }
 
-    &__link:active {
+    &__item &__link:active {
         font-weight: $font-weight-demi;
         border-bottom: 2px $primary-color-white solid;
         color: $primary-color-white;
@@ -103,7 +104,7 @@
 
     &__container {
         @include flexbox(column, normal, normal);
-        gap: 16px;
+        gap: 1rem;
     }
 
     &__image {
@@ -151,7 +152,7 @@
 
 .footer {
     @include flexbox(column, normal, normal);
-    gap: 16px;
+    gap: 1rem;
     padding: 1.5rem 1rem 1rem 1rem;
     background-color: $primary-color-bandsite-black;
 
@@ -177,12 +178,12 @@
 
     &__container {
         @include flexbox(column, normal, normal);
-        gap: 24px;
+        gap: 1.5rem;
     }
 
     &__contact-container {
         @include flexbox(column, normal, normal);
-        gap: 16px;
+        gap: 1rem;
         @include font-body($primary-color-white);
     }
 
@@ -201,7 +202,7 @@
 
     &__copyright-container {
         @include flexbox(column, normal, normal);
-        gap: 16px;
+        gap: 0.5rem;
     }
 
     &__copyright {
