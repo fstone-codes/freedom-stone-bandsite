@@ -3,29 +3,31 @@
 @use "./partials/typography" as *;
 @use "./partials/variables" as *;
 
-section,
-footer {
-    padding: 0 16px;
-}
+// section,
+// footer {
+//     padding: 0 16px;
+// }
 
 .header {
-    @include flex-column;
+    @include flexbox(column, normal, normal);
     gap: 1rem;
-    padding: 16px 0;
     @include font-body($primary-color-white);
     background-color: $primary-color-bandsite-black;
 
     @include tablet {
-        @include flex-row;
+        @include flexbox(row, normal, normal);
     }
 
     @include desktop {
-        @include flex-row;
+        @include flexbox(row, normal, normal);
     }
 }
 
 .logo {
-    @include flex-all-center;
+    &--center {
+        @include flexbox(row, center, center);
+    }
+
     //     &__link {
     //     }
 
@@ -35,12 +37,29 @@ footer {
 
 .nav {
     &__list {
-        @include flex-space-around;
+        @include flexbox(row, space-around, normal);
         list-style-type: none;
     }
 
-    &__item:hover {
+    &__item {
+        padding: 16px 0;
+    }
+
+    &__link {
+        padding: 16px 0;
+        text-decoration: none;
+        color: $secondary-color-mercury;
+    }
+
+    &__item &__link:hover {
         border-bottom: 2px $primary-color-white solid;
+        color: $primary-color-white;
+    }
+
+    &__link:active {
+        font-weight: $font-weight-demi;
+        border-bottom: 2px $primary-color-white solid;
+        color: $primary-color-white;
     }
 }
 
@@ -48,14 +67,18 @@ footer {
 // }
 
 .hero {
-    @include flex-items-center;
+    @include flexbox(row, normal, center);
     position: relative;
+    height: 60vw;
+    padding: 0 1rem;
     background-image: url("../assets/images/hero-bio.jpg");
     background-position: center;
     background-size: cover;
 
     &__overlay {
         position: absolute;
+        top: 0;
+        left: 0;
         background-color: $primary-color-bandsite-black;
         opacity: 50%;
         width: 100%;
@@ -63,17 +86,23 @@ footer {
     }
 
     &__title {
-        @include font-header($primary-color-white);
+        @include font-header(0, 0, $primary-color-white);
+        position: relative;
+        z-index: 1;
     }
 }
 
 .about {
+    @include flexbox(column, normal, normal);
+    gap: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+
     &__title {
-        @include font-header($primary-color-bandsite-black);
+        @include font-header(0, 0, $primary-color-bandsite-black);
     }
 
     &__container {
-        @include flex-column;
+        @include flexbox(column, normal, normal);
         gap: 16px;
     }
 
@@ -91,6 +120,7 @@ footer {
 
     &__subtitle {
         @include font-body-demi($primary-color-bandsite-black);
+        padding-top: 0.5rem;
     }
 
     &__detail {
@@ -99,40 +129,44 @@ footer {
 }
 
 .gallery {
+    @include flexbox(column, normal, normal);
+    gap: 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
     background-color: $secondary-color-alabaster;
 
     &__title {
-        @include font-header($primary-color-bandsite-black);
+        @include font-header(0, 0, $primary-color-bandsite-black);
     }
 
     &__container {
-        @include flex-column;
+        @include flexbox(column, normal, normal);
         gap: 1rem;
     }
 
     &__image {
-        @include flex-row;
+        @include flexbox(row, normal, normal);
         width: 100%;
     }
 }
 
 .footer {
-    @include flex-column;
+    @include flexbox(column, normal, normal);
     gap: 16px;
+    padding: 1.5rem 1rem 1rem 1rem;
     background-color: $primary-color-bandsite-black;
 
-    &__container {
-        @include flex-column;
-        gap: 24px;
+    &__socials-container {
+        @include flexbox(column, normal, normal);
+        gap: 1rem;
     }
 
     &__title {
-        @include font-header($primary-color-white);
+        @include font-header(0, 0, $primary-color-white);
     }
 
     &__icon-container {
-        @include flex-row;
-        gap: 24px;
+        @include flexbox(row, normal, normal);
+        gap: 2rem;
     }
 
     //     &__link {
@@ -141,8 +175,13 @@ footer {
     //     &__icon {
     //     }
 
+    &__container {
+        @include flexbox(column, normal, normal);
+        gap: 24px;
+    }
+
     &__contact-container {
-        @include flex-column;
+        @include flexbox(column, normal, normal);
         gap: 16px;
         @include font-body($primary-color-white);
     }
@@ -159,6 +198,11 @@ footer {
 
     //     &__email {
     //     }
+
+    &__copyright-container {
+        @include flexbox(column, normal, normal);
+        gap: 16px;
+    }
 
     &__copyright {
         @include font-label($font-weight-regular);

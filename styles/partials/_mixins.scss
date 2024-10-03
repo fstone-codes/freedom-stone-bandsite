@@ -14,8 +14,8 @@
 }
 
 // FONT STYLES - MOBILE
-@mixin font-header($color) {
-    padding: 1.5rem 0 1rem 0;
+@mixin font-header($padding-top, $padding-bottom, $color) {
+    padding: $padding-top 0 $padding-bottom 0;
     color: $color;
     font-size: $font-size-large;
     font-weight: $font-weight-demi;
@@ -121,4 +121,11 @@
 @mixin flex-row {
     display: flex;
     flex-flow: row wrap;
+}
+
+@mixin flexbox($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }
