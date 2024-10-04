@@ -18,7 +18,11 @@
     }
 
     @include desktop {
-        @include flexbox(row, center, normal);
+        @include flexbox(row, normal, center);
+        gap: 3.5rem;
+        @include font-dt-body($primary-color-white);
+        padding: 0 0 0 2rem;
+        height: 5rem;
     }
 }
 
@@ -44,10 +48,6 @@
         background-repeat: no-repeat;
         width: 7.5rem;
         height: 1.25rem;
-    }
-
-    &__image {
-        width: 7.5rem;
     }
 }
 
@@ -101,6 +101,10 @@
     background-position: center;
     background-size: cover;
 
+    @include tablet {
+        padding: 0 2.5rem;
+    }
+
     &__overlay {
         position: absolute;
         top: 0;
@@ -140,17 +144,34 @@
         }
     }
 
-    &__container {
+    &__dt-container {
         @include flexbox(column, normal, normal);
         gap: 1rem;
+
+        @include tablet {
+            padding: 0 3.5rem;
+        }
+    }
+
+    &__container {
+        @include flexbox(column, normal, normal);
+        gap: 0.5rem;
     }
 
     &__image {
+        height: 50vw;
         width: 100%;
+        object-fit: cover;
+        object-position: bottom center;
+
+        @include tablet {
+            height: 40vw;
+            object-position: center center;
+        }
     }
 
     &__quote {
-        @include font-body-demi($primary-color-bandsite-black);
+        @include font-quote($primary-color-bandsite-black);
 
         @include tablet {
             @include font-dt-subheader($primary-color-bandsite-black);
@@ -171,6 +192,17 @@
 
         @include tablet {
             @include font-dt-subheader($primary-color-bandsite-black);
+            padding-top: 2rem;
+        }
+    }
+
+    &__para-container {
+        @include flexbox(column, normal, normal);
+        gap: 1rem;
+
+        @include tablet {
+            @include flexbox(row, normal, normal);
+            gap: 2rem;
         }
     }
 
@@ -190,7 +222,15 @@
     background-color: $secondary-color-alabaster;
 
     @include tablet {
+        gap: 1.5rem;
         padding: 3rem 2.5rem 2.5rem 2.5rem;
+    }
+
+    @include desktop {
+        // gap: 1.5rem;
+        // margin: 0 auto;
+        // padding: 0;
+        // width: 90vw;
     }
 
     &__title {
@@ -230,12 +270,19 @@
     background-color: $primary-color-bandsite-black;
 
     @include tablet {
+        padding: 3rem 2.5rem;
+        gap: 3rem;
         position: relative;
     }
 
     &__socials-container {
         @include flexbox(column, normal, normal);
         gap: 1rem;
+
+        @include tablet {
+            @include flexbox(row, normal, baseline);
+            gap: 2rem;
+        }
     }
 
     &__title {
@@ -260,6 +307,10 @@
     &__container {
         @include flexbox(column, normal, normal);
         gap: 1.5rem;
+
+        @include tablet {
+            @include flexbox(row, space-between, normal);
+        }
     }
 
     &__contact-container {
@@ -268,6 +319,7 @@
         @include font-body($primary-color-white);
 
         @include tablet {
+            gap: 1.5rem;
             @include font-dt-footer($primary-color-white);
         }
     }
