@@ -31,14 +31,31 @@
         @include flexbox(row, center, center);
     }
 
-    &--footer {
-        @include flexbox(row, normal, center);
-        padding-top: 2rem;
+    &--footer-top {
+        display: none;
 
         @include tablet {
+            display: inline-block;
             position: absolute;
-            top: 0;
             right: 0;
+            background-image: url(../assets/logos/Logo-bandsite.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 7.5rem;
+            height: 1.25rem;
+        }
+    }
+
+    &--footer-bottom {
+        background-image: url(../assets/logos/Logo-bandsite.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 2rem 0 0.5rem 0;
+        width: 7.5rem;
+        height: 1.25rem;
+
+        @include tablet {
+            display: none;
         }
     }
 
@@ -77,16 +94,16 @@
         color: $secondary-color-mercury;
     }
 
-    &__item:hover {
+    &__item:hover:active {
         border-bottom: 2px $primary-color-white solid;
         color: $primary-color-white;
     }
 
-    &__item &__link:active {
-        font-weight: $font-weight-demi;
-        border-bottom: 2px $primary-color-white solid;
-        color: $primary-color-white;
-    }
+    // &__link:active:hover {
+    //     font-weight: $font-weight-demi;
+    //     border-bottom: 2px $primary-color-white solid;
+    //     color: $primary-color-white;
+    // }
 }
 
 // .main {
@@ -198,6 +215,7 @@
         @include font-quote($primary-color-bandsite-black);
 
         @include tablet {
+            padding-top: 1.5rem;
             @include font-dt-subheader($primary-color-bandsite-black);
         }
 
@@ -300,7 +318,6 @@
     @include tablet {
         padding: 3rem 2.5rem;
         gap: 3rem;
-        position: relative;
     }
 
     @include desktop {
@@ -317,6 +334,7 @@
         }
 
         @include tablet {
+            position: relative;
             gap: 4rem;
         }
     }
@@ -348,7 +366,7 @@
             @include flexbox(row, space-between, normal);
         }
 
-        @include tablet {
+        @include desktop {
             @include flexbox(row, normal, normal);
             gap: 5rem;
         }
