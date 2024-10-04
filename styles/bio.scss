@@ -13,16 +13,16 @@
         @include flexbox(row, normal, center);
         gap: 3.5rem;
         @include font-dt-body($primary-color-white);
-        padding: 0 0 0 2rem;
-        height: 10vh;
+        padding: 0 0 0 2.5rem;
+        height: 4rem;
     }
 
     @include desktop {
         @include flexbox(row, normal, center);
         gap: 3.5rem;
         @include font-dt-body($primary-color-white);
-        padding: 0 0 0 2rem;
-        height: 5rem;
+        padding: 0 0 0 8rem;
+        height: 6rem;
     }
 }
 
@@ -105,14 +105,19 @@
         padding: 0 2.5rem;
     }
 
+    @include desktop {
+        height: 50vw;
+        padding: 0 8rem;
+    }
+
     &__overlay {
         position: absolute;
         top: 0;
         left: 0;
-        background-color: $primary-color-bandsite-black;
-        opacity: 50%;
         width: 100%;
         height: 100%;
+        background-color: $primary-color-bandsite-black;
+        opacity: 50%;
     }
 
     &__title {
@@ -136,6 +141,11 @@
         padding: 3rem 2.5rem 2.5rem 2.5rem;
     }
 
+    @include desktop {
+        gap: 2rem;
+        padding: 4rem 8rem 2.5rem 8rem;
+    }
+
     &__title {
         @include font-header(0, 0, $primary-color-bandsite-black);
 
@@ -151,11 +161,20 @@
         @include tablet {
             padding: 0 3.5rem;
         }
+
+        @include desktop {
+            gap: 1.5rem;
+            padding: 0 5.5rem;
+        }
     }
 
     &__container {
         @include flexbox(column, normal, normal);
         gap: 0.5rem;
+
+        @include desktop {
+            gap: 1rem;
+        }
     }
 
     &__image {
@@ -168,6 +187,11 @@
             height: 40vw;
             object-position: center center;
         }
+
+        @include desktop {
+            height: 35vw;
+            object-position: center center;
+        }
     }
 
     &__quote {
@@ -175,6 +199,10 @@
 
         @include tablet {
             @include font-dt-subheader($primary-color-bandsite-black);
+        }
+
+        @include desktop {
+            padding-top: 1.5rem;
         }
     }
 
@@ -227,9 +255,9 @@
     }
 
     @include desktop {
-        // gap: 1.5rem;
+        gap: 2rem;
         // margin: 0 auto;
-        // padding: 0;
+        padding: 4rem 8rem 2.5rem 8rem;
         // width: 90vw;
     }
 
@@ -275,6 +303,10 @@
         position: relative;
     }
 
+    @include desktop {
+        padding: 3rem 8rem;
+    }
+
     &__socials-container {
         @include flexbox(column, normal, normal);
         gap: 1rem;
@@ -282,6 +314,10 @@
         @include tablet {
             @include flexbox(row, normal, baseline);
             gap: 2rem;
+        }
+
+        @include tablet {
+            gap: 4rem;
         }
     }
 
@@ -310,6 +346,11 @@
 
         @include tablet {
             @include flexbox(row, space-between, normal);
+        }
+
+        @include tablet {
+            @include flexbox(row, normal, normal);
+            gap: 5rem;
         }
     }
 
