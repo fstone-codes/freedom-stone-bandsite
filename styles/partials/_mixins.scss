@@ -14,8 +14,8 @@
 }
 
 // FONT STYLES - MOBILE
-@mixin font-header($padding-top, $padding-bottom, $color) {
-    padding: $padding-top 0 $padding-bottom 0;
+@mixin font-header($margin-top, $margin-bottom, $color) {
+    margin: $margin-top 0 $margin-bottom 0;
     color: $color;
     font-size: $font-size-large;
     font-weight: $font-weight-demi;
@@ -37,14 +37,16 @@
     line-height: 1.125rem;
 }
 
-@mixin font-body-demi($color) {
+@mixin font-body-demi($margin-top, $margin-bottom, $color) {
+    margin: $margin-top 0 $margin-bottom 0;
     color: $color;
     font-size: $font-size-body;
     font-weight: $font-weight-demi;
     line-height: 1.125rem;
 }
 
-@mixin font-quote($color) {
+@mixin font-quote($margin-top, $margin-bottom, $color) {
+    margin: $margin-top 0 $margin-bottom 0;
     color: $color;
     font-size: $font-size-body;
     font-weight: $font-weight-demi;
@@ -74,7 +76,8 @@
     line-height: 2.75rem;
 }
 
-@mixin font-dt-subheader($color) {
+@mixin font-dt-subheader($margin-top, $margin-bottom, $color) {
+    margin: $margin-top 0 $margin-bottom 0;
     color: $color;
     font-size: $font-size-dt-medium;
     font-weight: $font-weight-demi;
