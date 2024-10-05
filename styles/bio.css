@@ -151,16 +151,16 @@ body {
   }
 }
 .nav__item--active {
-  border-top: 2px transparent solid;
-  border-bottom: 2px #ffffff solid;
+  border-top: 4px transparent solid;
+  border-bottom: 4px #ffffff solid;
   font-weight: 600;
 }
 .nav__item > .nav__link {
   color: #ffffff;
 }
 .nav__item:hover {
-  border-top: 2px transparent solid;
-  border-bottom: 2px #ffffff solid;
+  border-top: 4px transparent solid;
+  border-bottom: 4px #ffffff solid;
 }
 .nav__item:hover .nav__link {
   color: #ffffff;
@@ -587,6 +587,10 @@ body {
     font-weight: 600;
     line-height: 1.25rem;
   }
+}
+.footer__email a {
+  text-decoration: none;
+  color: #ffffff;
 }
 .footer__copyright-container {
   display: flex;

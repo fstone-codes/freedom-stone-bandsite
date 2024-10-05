@@ -90,8 +90,8 @@
         }
 
         &--active {
-            border-top: 2px transparent solid;
-            border-bottom: 2px $primary-color-white solid;
+            border-top: 4px transparent solid;
+            border-bottom: 4px $primary-color-white solid;
             font-weight: $font-weight-demi;
         }
 
@@ -100,8 +100,8 @@
         }
 
         &:hover {
-            border-top: 2px transparent solid;
-            border-bottom: 2px $primary-color-white solid;
+            border-top: 4px transparent solid;
+            border-bottom: 4px $primary-color-white solid;
         }
 
         &:hover .nav__link {
@@ -420,8 +420,12 @@
     //     &__details {
     //     }
 
-    //     &__email {
-    //     }
+    &__email {
+        & a {
+            text-decoration: none;
+            color: $primary-color-white;
+        }
+    }
 
     &__copyright-container {
         @include flexbox(column, normal, normal);
