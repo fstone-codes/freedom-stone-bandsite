@@ -46,7 +46,7 @@ body {
   align-items: normal;
   padding-top: 1rem;
   background-color: #323232;
-  color: #ffffff;
+  color: #e1e1e1;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
@@ -58,8 +58,8 @@ body {
     justify-content: normal;
     align-items: center;
     gap: 3.5rem;
-    padding: 0 0 0 2.5rem;
-    color: #ffffff;
+    padding: 0 0 0 2rem;
+    color: #e1e1e1;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
@@ -68,7 +68,7 @@ body {
 @media (min-width: 1280px) {
   .header {
     padding: 0 0 0 8rem;
-    color: #ffffff;
+    color: #e1e1e1;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
@@ -134,7 +134,6 @@ body {
 }
 @media (min-width: 1280px) {
   .nav__list {
-    gap: 3.5rem;
     height: 5rem;
   }
 }
@@ -146,30 +145,27 @@ body {
   width: 100%;
 }
 .nav__item--active {
-  border-top: 4px transparent solid;
-  border-bottom: 4px #ffffff solid;
+  border-top: 3px transparent solid;
+  border-bottom: 3px #ffffff solid;
+  color: #ffffff;
   font-weight: 600;
 }
-.nav__item > .nav__link {
+.nav__item--active .nav__link {
   color: #ffffff;
 }
 .nav__item:hover {
-  border-top: 4px transparent solid;
-  border-bottom: 4px #ffffff solid;
+  border-top: 3px transparent solid;
+  border-bottom: 3px #ffffff solid;
 }
 .nav__item:hover .nav__link {
   color: #ffffff;
 }
 .nav__item:active .nav__link {
-  color: #ffffff;
   font-weight: 600;
 }
 .nav__link {
   color: #e1e1e1;
   text-decoration: none;
-}
-.nav__link:active .nav__item {
-  border-bottom: 2px #ffffff solid;
 }
 
 .hero {
@@ -186,7 +182,7 @@ body {
 }
 @media (min-width: 768px) {
   .hero {
-    padding: 0 2.5rem;
+    padding: 0 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -232,13 +228,13 @@ body {
 @media (min-width: 768px) {
   .about {
     gap: 1.5rem;
-    padding: 3rem 2.5rem 2.5rem;
+    padding: 3rem 2rem 2rem;
   }
 }
 @media (min-width: 1280px) {
   .about {
     gap: 2rem;
-    padding: 4rem 8rem 2.5rem;
+    padding: 4rem 8rem 3rem;
   }
 }
 .about__title {
@@ -304,7 +300,7 @@ body {
   .about__quote {
     margin: 2rem 0 1rem;
     color: #323232;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 600;
     line-height: 2rem;
   }
@@ -312,7 +308,7 @@ body {
 @media (min-width: 1280px) {
   .about__quote {
     margin: 2.5rem 0 1rem;
-    width: 85%;
+    width: 77%;
   }
 }
 .about__quote-author {
@@ -327,7 +323,7 @@ body {
     color: #323232;
     font-size: 0.875rem;
     font-weight: 600;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 .about__subtitle {
@@ -341,7 +337,7 @@ body {
   .about__subtitle {
     margin: 3.5rem 0 1.5rem;
     color: #323232;
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 600;
     line-height: 2rem;
   }
@@ -389,13 +385,13 @@ body {
 @media (min-width: 768px) {
   .gallery {
     gap: 1.5rem;
-    padding: 3rem 2.5rem 2.5rem;
+    padding: 3rem 2rem 2rem;
   }
 }
 @media (min-width: 1280px) {
   .gallery {
     gap: 2rem;
-    padding: 4rem 8rem 2.5rem;
+    padding: 4rem 8rem 3rem;
   }
 }
 .gallery__title {
@@ -459,7 +455,7 @@ body {
 @media (min-width: 768px) {
   .footer {
     gap: 2rem;
-    padding: 3rem 2.5rem;
+    padding: 3rem 2rem;
   }
 }
 @media (min-width: 1280px) {
@@ -517,7 +513,7 @@ body {
   align-items: center;
 }
 .footer__icon {
-  height: 25px;
+  height: 1.5rem;
 }
 .footer__info-container {
   display: flex;
@@ -557,10 +553,10 @@ body {
 @media (min-width: 768px) {
   .footer__contact-container {
     gap: 1.5rem;
-    color: #ffffff;
+    color: #e1e1e1;
     font-size: 0.875rem;
     font-weight: 400;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 .footer__org {
@@ -575,7 +571,7 @@ body {
     color: #e1e1e1;
     font-size: 0.875rem;
     font-weight: 600;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }
 .footer__email a {
@@ -600,6 +596,6 @@ body {
     color: #e1e1e1;
     font-size: 0.875rem;
     font-weight: 400;
-    line-height: 1.25rem;
+    line-height: 1.375rem;
   }
 }/*# sourceMappingURL=bio.css.map */

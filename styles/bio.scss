@@ -5,20 +5,20 @@
 
 .header {
     @include flexbox(column, normal, normal);
-    padding-top: $spacing-med;
+    padding-top: $spacing-xsm;
     background-color: $primary-color-bandsite-black;
-    @include font-body($primary-color-white);
+    @include font-body($secondary-color-mercury);
 
     @include tablet {
         @include flexbox(row, normal, center);
-        gap: 3.5rem;
-        padding: 0 0 0 2.5rem;
-        @include font-dt-body($primary-color-white);
+        gap: calc($spacing-xsm * 3.5);
+        padding: 0 0 0 $spacing-med;
+        @include font-dt-body($secondary-color-mercury, $font-weight-regular);
     }
 
     @include desktop {
-        padding: 0 0 0 8rem;
-        @include font-dt-body($primary-color-white);
+        padding: 0 0 0 $spacing-xlg;
+        @include font-dt-body($secondary-color-mercury, $font-weight-regular);
     }
 }
 
@@ -42,7 +42,7 @@
     }
 
     &--footer-bottom {
-        margin-top: $spacing-lg;
+        margin-top: $spacing-sm;
         width: 7.5rem;
         height: 1.25rem;
         @include background-image-logo;
@@ -66,12 +66,11 @@
         list-style-type: none;
 
         @include tablet {
-            gap: 3.5rem;
+            gap: calc($spacing-xsm * 3.5);
             height: 4rem;
         }
 
         @include desktop {
-            gap: 3.5rem;
             height: 5rem;
         }
     }
@@ -80,22 +79,20 @@
         @include flexbox(row, center, center);
         width: 100%;
 
-        @include tablet {
-        }
-
         &--active {
-            border-top: 4px transparent solid;
-            border-bottom: 4px $primary-color-white solid;
-            font-weight: $font-weight-demi;
-        }
-
-        > .nav__link {
+            border-top: 3px transparent solid;
+            border-bottom: 3px $primary-color-white solid;
             color: $primary-color-white;
+            font-weight: $font-weight-demi;
+
+            & .nav__link {
+                color: $primary-color-white;
+            }
         }
 
         &:hover {
-            border-top: 4px transparent solid;
-            border-bottom: 4px $primary-color-white solid;
+            border-top: 3px transparent solid;
+            border-bottom: 3px $primary-color-white solid;
         }
 
         &:hover .nav__link {
@@ -103,7 +100,6 @@
         }
 
         &:active .nav__link {
-            color: $primary-color-white;
             font-weight: $font-weight-demi;
         }
     }
@@ -111,10 +107,6 @@
     &__link {
         color: $secondary-color-mercury;
         text-decoration: none;
-
-        &:active .nav__item {
-            border-bottom: 2px $primary-color-white solid;
-        }
     }
 }
 
@@ -124,16 +116,16 @@
 .hero {
     position: relative;
     @include flexbox(row, normal, center);
-    padding: 0 $spacing-med;
+    padding: 0 $spacing-xsm;
     height: 60vw;
     @include background-image-hero;
 
     @include tablet {
-        padding: 0 2.5rem;
+        padding: 0 $spacing-med;
     }
 
     @include desktop {
-        padding: 0 8rem;
+        padding: 0 $spacing-xlg;
         height: 50vw;
     }
 
@@ -153,24 +145,24 @@
         @include font-header($primary-color-white);
 
         @include tablet {
-            @include font-dt-page-header($primary-color-white);
+            @include font-dt-page-header;
         }
     }
 }
 
 .about {
     @include flexbox(column, normal, normal);
-    gap: $spacing-med;
-    padding: $spacing-lg $spacing-med $spacing-med;
+    gap: $spacing-xsm;
+    padding: $spacing-sm $spacing-xsm $spacing-xsm;
 
     @include tablet {
-        gap: 1.5rem;
-        padding: 3rem 2.5rem 2.5rem;
+        gap: $spacing-sm;
+        padding: $spacing-lg $spacing-med $spacing-med;
     }
 
     @include desktop {
-        gap: 2rem;
-        padding: 4rem 8rem 2.5rem;
+        gap: $spacing-med;
+        padding: calc($spacing-xsm * 4) $spacing-xlg $spacing-lg;
     }
 
     &__title {
@@ -185,11 +177,11 @@
         @include flexbox(column, normal, normal);
 
         @include tablet {
-            padding: 0 3.5rem;
+            padding: 0 calc($spacing-xsm * 3.5);
         }
 
         @include desktop {
-            padding: 0 5.5rem;
+            padding: 0 calc($spacing-xsm * 5.5);
         }
     }
 
@@ -211,15 +203,19 @@
     }
 
     &__quote {
-        @include font-subheader($spacing-med, 0.5rem, $primary-color-bandsite-black);
+        @include font-subheader(
+            $spacing-xsm,
+            calc($spacing-xsm * 0.5),
+            $primary-color-bandsite-black
+        );
 
         @include tablet {
-            @include font-dt-subheader(2rem, 1rem, $primary-color-bandsite-black);
+            @include font-dt-subheader($spacing-med, $spacing-xsm);
         }
 
         @include desktop {
-            margin: 2.5rem 0 1rem;
-            width: 85%;
+            margin: calc($spacing-xsm * 2.5) 0 $spacing-xsm;
+            width: 77%;
         }
     }
 
@@ -227,25 +223,25 @@
         @include font-subheader(0, 0, $primary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-footer-demi($primary-color-bandsite-black);
+            @include font-dt-body($primary-color-bandsite-black, $font-weight-demi);
         }
     }
 
     &__subtitle {
-        @include font-subheader($spacing-lg, $spacing-med, $primary-color-bandsite-black);
+        @include font-subheader($spacing-sm, $spacing-xsm, $primary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-subheader(3.5rem, 1.5rem, $primary-color-bandsite-black);
+            @include font-dt-subheader(calc($spacing-xsm * 3.5), $spacing-sm);
         }
     }
 
     &__para-container {
         @include flexbox(column, normal, normal);
-        gap: $spacing-med;
+        gap: $spacing-xsm;
 
         @include tablet {
             @include flexbox(row, normal, normal);
-            gap: 2rem;
+            gap: $spacing-med;
         }
     }
 
@@ -253,25 +249,25 @@
         @include font-body($primary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-body($primary-color-bandsite-black);
+            @include font-dt-body($primary-color-bandsite-black, $font-weight-regular);
         }
     }
 }
 
 .gallery {
     @include flexbox(column, normal, normal);
-    gap: $spacing-med;
-    padding: $spacing-lg $spacing-med $spacing-med;
+    gap: $spacing-xsm;
+    padding: $spacing-sm $spacing-xsm $spacing-xsm;
     background-color: $secondary-color-alabaster;
 
     @include tablet {
-        gap: 1.5rem;
-        padding: 3rem 2.5rem 2.5rem;
+        gap: $spacing-sm;
+        padding: $spacing-lg $spacing-med $spacing-med;
     }
 
     @include desktop {
-        gap: 2rem;
-        padding: 4rem 8rem 2.5rem;
+        gap: $spacing-med;
+        padding: calc($spacing-xsm * 4) $spacing-xlg $spacing-lg;
     }
 
     &__title {
@@ -285,11 +281,11 @@
     &__container {
         @include flexbox(column, normal, normal);
         flex-wrap: wrap;
-        gap: $spacing-med;
+        gap: $spacing-xsm;
 
         @include tablet {
             @include flexbox(row, center, center);
-            gap: 1.5rem;
+            gap: $spacing-sm;
         }
     }
 
@@ -311,31 +307,31 @@
 
 .footer {
     @include flexbox(column, normal, normal);
-    gap: $spacing-lg;
-    padding: $spacing-lg $spacing-med;
+    gap: $spacing-sm;
+    padding: $spacing-sm $spacing-xsm;
     background-color: $primary-color-bandsite-black;
 
     @include tablet {
-        gap: 2rem;
-        padding: 3rem 2.5rem;
+        gap: $spacing-med;
+        padding: $spacing-lg $spacing-med;
     }
 
     @include desktop {
-        padding: 3rem 8rem;
+        padding: $spacing-lg $spacing-xlg;
     }
 
     &__socials-container {
         @include flexbox(column, normal, normal);
-        gap: $spacing-med;
+        gap: $spacing-xsm;
 
         @include tablet {
             @include flexbox(row, normal, baseline);
-            gap: 2rem;
+            gap: $spacing-med;
         }
 
         @include tablet {
             position: relative;
-            gap: 4rem;
+            gap: calc($spacing-xsm * 4);
         }
     }
 
@@ -349,7 +345,7 @@
 
     &__icon-container {
         @include flexbox(row, normal, normal);
-        gap: 2rem;
+        gap: $spacing-med;
     }
 
     &__link {
@@ -357,12 +353,12 @@
     }
 
     &__icon {
-        height: 25px;
+        height: $spacing-sm;
     }
 
     &__info-container {
         @include flexbox(column, normal, normal);
-        gap: $spacing-lg;
+        gap: $spacing-sm;
 
         @include tablet {
             @include flexbox(row, space-between, normal);
@@ -370,18 +366,18 @@
 
         @include desktop {
             @include flexbox(row, normal, normal);
-            gap: 5rem;
+            gap: calc($spacing-xsm * 5);
         }
     }
 
     &__contact-container {
         @include flexbox(column, normal, normal);
-        gap: $spacing-med;
+        gap: $spacing-xsm;
         @include font-body($secondary-color-mercury);
 
         @include tablet {
-            gap: 1.5rem;
-            @include font-dt-footer($primary-color-white);
+            gap: $spacing-sm;
+            @include font-dt-body($secondary-color-mercury, $font-weight-regular);
         }
     }
 
@@ -389,7 +385,7 @@
         @include font-subheader(0, 0, $secondary-color-mercury);
 
         @include tablet {
-            @include font-dt-footer-demi($secondary-color-mercury);
+            @include font-dt-body($secondary-color-mercury, $font-weight-demi);
         }
     }
 
@@ -408,14 +404,14 @@
 
     &__copyright-container {
         @include flexbox(column, normal, normal);
-        gap: $spacing-med;
+        gap: $spacing-xsm;
     }
 
     &__copyright {
-        @include font-copyright($font-weight-regular);
+        @include font-tiny($font-weight-regular);
 
         @include tablet {
-            @include font-dt-footer($secondary-color-mercury);
+            @include font-dt-body($secondary-color-mercury, $font-weight-regular);
         }
     }
 }

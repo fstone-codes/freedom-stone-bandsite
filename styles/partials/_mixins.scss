@@ -13,6 +13,28 @@
     }
 }
 
+// FLEXBOX
+
+@mixin flexbox($direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+// CSS IMAGE
+@mixin background-image-logo {
+    background-image: url("../../assets/logos/Logo-bandsite.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+@mixin background-image-hero {
+    background-image: url("../../assets/images/hero-bio.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 // FONT STYLES - MOBILE
 @mixin font-header($color) {
     color: $color;
@@ -36,16 +58,16 @@
     line-height: 1.125rem;
 }
 
-@mixin font-copyright($font-weight) {
+@mixin font-tiny($font-weight) {
     color: $secondary-color-mercury;
-    font-size: $font-size-label;
+    font-size: $font-size-tiny;
     font-weight: $font-weight;
     line-height: 1.25rem;
 }
 
 // FONT STYLES - DESKTOP + TABLET
-@mixin font-dt-page-header($color) {
-    color: $color;
+@mixin font-dt-page-header {
+    color: $primary-color-white;
     font-size: $font-size-dt-largest;
     font-weight: $font-weight-demi;
     line-height: 4.25rem;
@@ -58,60 +80,17 @@
     line-height: 2.75rem;
 }
 
-@mixin font-dt-subheader($margin-top, $margin-bottom, $color) {
+@mixin font-dt-subheader($margin-top, $margin-bottom) {
     margin: $margin-top 0 $margin-bottom;
-    color: $color;
+    color: $primary-color-bandsite-black;
     font-size: $font-size-dt-medium;
     font-weight: $font-weight-demi;
     line-height: 2rem;
 }
 
-@mixin font-dt-body($color) {
+@mixin font-dt-body($color, $font-weight) {
     color: $color;
     font-size: $font-size-dt-body;
-    font-weight: $font-weight-regular;
+    font-weight: $font-weight;
     line-height: 1.375rem;
-}
-
-@mixin font-dt-footer($color) {
-    color: $color;
-    font-size: $font-size-dt-body;
-    font-weight: $font-weight-regular;
-    line-height: 1.25rem;
-}
-
-@mixin font-dt-footer-demi($color) {
-    color: $color;
-    font-size: $font-size-dt-body;
-    font-weight: $font-weight-demi;
-    line-height: 1.25rem;
-}
-
-@mixin font-dt-label($color) {
-    color: $color;
-    font-size: $font-size-dt-label;
-    font-weight: $font-weight-bold;
-    line-height: 1.25rem;
-}
-
-// FLEXBOX
-
-@mixin flexbox($direction, $justify-content, $align-items) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify-content;
-    align-items: $align-items;
-}
-
-// CSS IMAGE
-@mixin background-image-logo {
-    background-image: url("../../assets/logos/Logo-bandsite.svg");
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-@mixin background-image-hero {
-    background-image: url("../../assets/images/hero-bio.jpg");
-    background-position: center;
-    background-size: cover;
 }
