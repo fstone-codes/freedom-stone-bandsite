@@ -50,7 +50,7 @@
         background-image: url(../assets/logos/Logo-bandsite.svg);
         background-position: center;
         background-repeat: no-repeat;
-        margin: 2rem 0 0.5rem 0;
+        margin: 1rem 0 0.5rem 0;
         width: 7.5rem;
         height: 1.25rem;
 
@@ -334,7 +334,7 @@
 
 .footer {
     @include flexbox(column, normal, normal);
-    gap: 1rem;
+    gap: 2rem;
     padding: 1.5rem 1rem;
     background-color: $primary-color-bandsite-black;
 
@@ -375,11 +375,13 @@
         gap: 2rem;
     }
 
-    //     &__link {
-    //     }
+    &__link {
+        @include flexbox(row, normal, center);
+    }
 
-    //     &__icon {
-    //     }
+    &__icon {
+        height: 25px;
+    }
 
     &__container {
         @include flexbox(column, normal, normal);

@@ -106,7 +106,7 @@ body {
   background-image: url(../assets/logos/Logo-bandsite.svg);
   background-position: center;
   background-repeat: no-repeat;
-  margin: 2rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
   width: 7.5rem;
   height: 1.25rem;
 }
@@ -471,7 +471,7 @@ body {
   flex-direction: column;
   justify-content: normal;
   align-items: normal;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1.5rem 1rem;
   background-color: #323232;
 }
@@ -529,6 +529,15 @@ body {
   justify-content: normal;
   align-items: normal;
   gap: 2rem;
+}
+.footer__link {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+}
+.footer__icon {
+  height: 25px;
 }
 .footer__container {
   display: flex;
