@@ -8,7 +8,7 @@ $secondary-color-alabaster: #fafafa;
 
 // FONT SIZE - MOBILE
 $font-size-large: 1.5rem;
-$font-size-medium: 1.375rem;
+$font-size-medium: 0.875rem;
 $font-size-body: 0.8125rem;
 $font-size-label: 0.625rem;
 
@@ -24,7 +24,13 @@ $font-weight-regular: 400;
 $font-weight-demi: 600;
 $font-weight-bold: 700;
 
-// SPACING UNITS
+// SPACING UNITS - MOBILE
+$spacing-lg: 1.5rem;
+$spacing-med: 1rem;
+
+// SPACING UNITS - DESKTOP + TABLET
+$spacing-dt-lg: 3rem;
+$spacing-dt-med: 2rem;
 
 // BREAKPOINTS
 $breakpoint-min-tablet: 768px;
