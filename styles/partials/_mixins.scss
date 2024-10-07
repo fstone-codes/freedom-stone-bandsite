@@ -29,8 +29,14 @@
     background-repeat: no-repeat;
 }
 
-@mixin background-image-hero {
+@mixin background-image-hero-index {
     background-image: url("../../assets/images/hero-bio.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+@mixin background-image-hero-shows {
+    background-image: url("../../assets/images/hero-shows.jpg");
     background-position: center;
     background-size: cover;
 }

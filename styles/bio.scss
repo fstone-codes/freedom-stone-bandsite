@@ -7,40 +7,7 @@
 // }
 
 .hero {
-    position: relative;
-    @include flexbox(row, normal, center);
-    padding: 0 $spacing-xsm;
-    height: 60vw;
-    @include background-image-hero;
-
-    @include tablet {
-        padding: 0 $spacing-med;
-    }
-
-    @include desktop {
-        padding: 0 $spacing-xlg;
-        height: 50vw;
-    }
-
-    &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: $primary-color-bandsite-black;
-        opacity: 50%;
-    }
-
-    &__title {
-        position: relative;
-        z-index: 1;
-        @include font-header($primary-color-white);
-
-        @include tablet {
-            @include font-dt-page-header;
-        }
-    }
+    @include background-image-hero-index;
 }
 
 .about {
@@ -194,6 +161,20 @@
 
         @include tablet {
             width: 30%;
+        }
+    }
+}
+
+.comment {
+    @include flexbox(column, normal, normal);
+    // gap: $spacing-xsm;
+    padding: $spacing-sm $spacing-xsm $spacing-xsm;
+
+    &__title {
+        @include font-header($primary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-section-header($primary-color-bandsite-black);
         }
     }
 }
