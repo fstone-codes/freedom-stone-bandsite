@@ -172,6 +172,22 @@ body {
     }
 }
 
+.btn-container {
+    @include flexbox(column, normal, normal);
+
+    &__btn {
+        height: 40px;
+        padding: 0 $spacing-med;
+        border-radius: 4px;
+        background-color: $primary-color-bandsite-black;
+        @include font-body($primary-color-white);
+
+        @include tablet {
+            flex: 0 0 9.375rem;
+        }
+    }
+}
+
 .footer {
     @include flexbox(column, normal, normal);
     gap: $spacing-sm;
@@ -275,7 +291,7 @@ body {
     }
 
     &__copyright {
-        @include font-tiny($font-weight-regular);
+        @include font-tiny($secondary-color-mercury, $font-weight-regular);
 
         @include tablet {
             @include font-dt-body($secondary-color-mercury, $font-weight-regular);

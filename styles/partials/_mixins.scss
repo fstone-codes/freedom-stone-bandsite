@@ -64,8 +64,8 @@
     line-height: 1.125rem;
 }
 
-@mixin font-tiny($font-weight) {
-    color: $secondary-color-mercury;
+@mixin font-tiny($color, $font-weight) {
+    color: $color;
     font-size: $font-size-tiny;
     font-weight: $font-weight;
     line-height: 1.25rem;

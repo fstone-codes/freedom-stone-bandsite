@@ -167,7 +167,7 @@
 
 .comment {
     @include flexbox(column, normal, normal);
-    // gap: $spacing-xsm;
+    gap: $spacing-xsm;
     padding: $spacing-sm $spacing-xsm $spacing-xsm;
 
     &__title {
@@ -176,5 +176,55 @@
         @include tablet {
             @include font-dt-section-header($primary-color-bandsite-black);
         }
+    }
+
+    &__input {
+        position: relative;
+        padding-left: 3.75rem;
+    }
+
+    &__image-container {
+        position: absolute;
+        top: 1.25rem;
+        left: 0;
+        width: 2.25rem;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $secondary-color-mercury;
+
+        @include tablet {
+            width: 3rem;
+        }
+    }
+
+    &__image {
+        height: 100%;
+        aspect-ratio: auto;
+    }
+}
+
+.form {
+    @include flexbox(column, normal, normal);
+    gap: $spacing-xsm;
+
+    &__container {
+        @include flexbox(column, normal, normal);
+    }
+
+    &__label {
+        @include font-tiny($primary-color-silver, $font-weight-demi);
+    }
+
+    &__input {
+        min-height: 2.25rem;
+        width: 100%;
+        padding: $spacing-xsm;
+        border: 1px solid $primary-color-silver;
+        border-radius: 4px;
+        background-color: $secondary-color-alabaster;
+        font-family: "Avenir Next", sans-serif;
+        color: $primary-color-bandsite-black;
+        resize: none;
     }
 }

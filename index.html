@@ -60,19 +60,25 @@
         </section>
         <section class="comment">
             <h2 class="comment__title">Join the Conversation</h2>
-            <!-- <div class="comment__container">
-                <div class="comment-form">
-                    <img class="comment-form__image" src="" alt="">
-                    <p class="comment-form__text">Name</p>
-                    <p class="comment-form__text">Comment</p>
-                    <button class="btn btn__comment"></button>
+            <div class="comment__input">
+                <div class="comment__image-container">
+                    <img class="comment__image" src="./assets/images/Mohan-muruge.jpg">
                 </div>
-                <div class="comment-list">
-                    <div class="comment-list">
-    
+                <form class="form">
+                    <div class="form__container">
+                        <label class="form__label" for="userName">NAME</label>
+                        <input class="form__input" type="text" name="userName" id="userName" placeholder="Enter your name">
                     </div>
-                </div>
-            </div> -->
+                    <div class="form__container">
+                        <label class="form__label" for="userComment">COMMENT</label>
+                        <textarea class="form__input" name="userComment" id="userComment" placeholder="Add a new comment"></textarea>
+                    </div>
+                    <div class="btn-container">
+                    <button class="btn-container__btn" type="submit">COMMENT</button>
+                    </div>
+                </form>
+            </div>
+            <div class="comment__list"></div>
         </section>
     </main>
     <footer class="footer">
