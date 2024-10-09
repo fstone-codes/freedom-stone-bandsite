@@ -20,7 +20,7 @@ const commentList = [
 let listEl = document.querySelector('.comment__list');
 
 
-// create function that loops through array to add a corresponding element tag for each index
+// create loop that iterates through array to add a corresponding element tag for each index
 for (let i = 0; i < commentList.length; i++) {
     // create element
     let itemEl = document.createElement('li');
