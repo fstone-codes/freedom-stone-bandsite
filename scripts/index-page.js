@@ -30,7 +30,7 @@ for (let i = 0; i < commentList.length; i++) {
     listEl.appendChild(itemEl);
     
     // create <div> child elements to <li>
-    for (let divIndex = 0; divIndex < 3; divIndex++) {
+    for (let divIndex = 0; divIndex < commentList.length; divIndex++) {
         let divEl = document.createElement('div');
         divEl.classList.add('comment__content-container');
         itemEl.appendChild(divEl);
@@ -41,37 +41,31 @@ for (let i = 0; i < commentList.length; i++) {
             imgEl.classList.add('comment__image');
             divEl.appendChild(imgEl);
 
+            // rename the <img> parent <div> class to match existing class in html
             divEl.classList.replace('comment__content-container', 'comment__image-container');
         }
 
+        // create two <p> children elements to second <div>
         if (divIndex === 1) {
-            let paraElName = document.createElement('p');
-            paraElName.classList.add('comment__name');
-            
-            for (let j = 0; j < commentList.length; j++) {
-                paraElName.innerText = commentList[j].userName;
-            }
-
-            divEl.appendChild(paraElName);
+            let paraEl = document.createElement('p');
+            paraEl.classList.add('comment__name');
+            // change the innerText to the userName key corresponding to the current commentList array index
+            paraEl.innerText = commentList[i].userName;
+            divEl.appendChild(paraEl);
             
             let paraElDate = document.createElement('p');
             paraElDate.classList.add('comment__date');
-            
-            for (let k = 0; k < commentList.length; k++) {
-                paraElDate.innerText = commentList[k].commentDate;
-            }
-            
+            // change the innerText to the commentDate key corresponding to the current commentList array index
+            paraElDate.innerText = commentList[i].commentDate;
             divEl.appendChild(paraElDate);
         }
-
+        
+        // create <p> child elements to third <div>
         if (divIndex === 2) {
             let paraEl = document.createElement('p');
             paraEl.classList.add('comment__comment-text');
-
-            for (let m = 0; m < commentList.length; m++) {
-                paraEl.innerText = commentList[m].userComment;
-            }
-
+            // change the innerText to the userComment key corresponding to the current commentList array index
+            paraEl.innerText = commentList[i].userComment;
             divEl.appendChild(paraEl)
         }
     }
