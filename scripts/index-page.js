@@ -70,3 +70,35 @@ for (let i = 0; i < commentList.length; i++) {
         }
     }
 }
+
+// pointing to <form> element
+let form = document.querySelector('.form');
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    let valueUserName = e.target.userName.value;
+    let valueUserComment = e.target.userComment.value;
+
+    let submissionDate = new Date();
+    let formattedDate = submissionDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    })
+
+    commentList.unshift({
+        userName: valueUserName,
+        userComment: valueUserComment,
+        commentDate: formattedDate
+    });
+
+    // if ((formUserName || formUserComment) === '') {
+
+    // } else {
+
+    // }
+
+    form.reset();
+})

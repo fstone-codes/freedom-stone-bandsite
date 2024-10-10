@@ -62,7 +62,28 @@ for (let i = 0; i < showList.length; i++) {
     listEl.appendChild(itemEl);
 
     // create <h4> and <p> children elements to <li>
-    for (let itemIndex = 0; itemIndex < Object.keys(showList[i]).length; itemIndex++) {
+    for (let itemIndex = 0; itemIndex < 6; i++) {
+        
+        if (itemIndex % 2 === 0) {
+            // let keyList = [showDate, showVenue, showLocation];
+            // let keyText = keyList[itemIndex % keyList.length]
+
+            let subtitle = document.createElement('h4');
+            subtitle.classList.add('shows__subtitle');
+            // subtitle.innerText = showList[itemIndex][keyText];
+            itemEl.appendChild(subtitle)
+        } 
+        // else {
+        //     let content = document.createElement('p');
+        //     content.classList.add('shows__subtitle');
+        //     // content.innerText = `${showList[i][itemIndex]}`;
+        //     itemEl.appendChild(content);
+        // }
+        // }
+    }
+}
+/*     
+    for (let itemIndex = 0; itemIndex < 6; itemIndex++) {
         if (!Number.isInteger((itemIndex + 1) / 2)) {
             let subtitle = document.createElement('h4');
             subtitle.classList.add('shows__subtitle');
@@ -74,5 +95,5 @@ for (let i = 0; i < showList.length; i++) {
             // content.innerText = `${showList[i][itemIndex]}`;
             itemEl.appendChild(content);
         }
-    }
-}
+    } 
+*/
