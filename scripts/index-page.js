@@ -19,6 +19,75 @@ const commentList = [
 // pointing to <ul> element (aka comment section container)
 let listEl = document.querySelector('.comment__list');
 
+
+function renderComment() {
+    listEl.innerHTML = '';
+
+    commentList.forEach((commentObj) => {
+        let commentWrap = document.createElement('li');
+        commentWrap.classList.add('comment__item');
+        
+        let imgDivEl = document.createElement('div');
+        imgDivEl.classList.add('comment__image-container');
+    
+        let imgEl = document.createElement('img');
+        imgEl.classList.add('comment__image');
+        
+        let infoDivEl = document.createElement('div');
+        infoDivEl.classList.add('comment__content-container');
+    
+        let nameParaEl = document.createElement('p');
+        nameParaEl.classList.add('comment__name');
+        nameParaEl.innerText = commentObj.userName;
+        
+        let dateParaEl = document.createElement('p');
+        dateParaEl.classList.add('comment__date');
+        dateParaEl.innerText = commentObj.commentDate;
+        
+        let commDivEl = document.createElement('div');
+        commDivEl.classList.add('comment__content-container');
+        
+        let commParaEl = document.createElement('p');
+        commParaEl.classList.add('comment__comment-text');
+        commParaEl.innerText = commentObj.userComment;
+        
+        listEl.appendChild(commentWrap);
+    
+        commentWrap.appendChild(imgDivEl);
+        commentWrap.appendChild(infoDivEl);
+        commentWrap.appendChild(commDivEl);
+        
+        imgDivEl.appendChild(imgEl);
+    
+        infoDivEl.appendChild(nameParaEl);
+        infoDivEl.appendChild(dateParaEl);
+        
+        commDivEl.appendChild(commParaEl);
+    });
+}
+
+renderComment();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =======================================================================================================
+/* 
+
 // create function that creates a new element + provides innerText with an object key value
 function createChildEl(newEl, newClass, parentEl, arrayIndex = null, objectKey = null) {
     let newElVar = document.createElement(newEl);
@@ -61,7 +130,7 @@ divEls.forEach((divItem, i) => {
 console.log(imgEls);
 
 
-/* // create loop that iterates through array to add a corresponding element tag for each index
+// create loop that iterates through array to add a corresponding element tag for each index
 for (let i = 0; i < commentList.length; i++) {
     itemEl = createChildEl('li', 'comment__item', listEl);
 };
@@ -102,10 +171,12 @@ for (let i = 0; i < 3; i++) {
     //     divEl.appendChild(paraEl);
     // }
 } */
+// =======================================================================================================
+
+
 
 // pointing to <form> element
 let form = document.querySelector('.form');
-
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -131,6 +202,8 @@ form.addEventListener('submit', (e) => {
     // } else {
 
     // }
+
+    renderComment();
 
     form.reset();
 })
