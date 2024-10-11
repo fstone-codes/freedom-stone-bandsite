@@ -7,6 +7,7 @@
 // }
 
 .hero {
+    @include flexbox(column, center, normal);
     @include background-image-hero-index;
 }
 

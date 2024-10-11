@@ -39,15 +39,15 @@ let labelDivEl = document.createElement('div');
 labelDivEl.classList.add('shows__label-container');
 
 let dateTitleEl = document.createElement('h4');
-dateTitleEl.classList.add('label');
+dateTitleEl.classList.add('label', 'label--top');
 dateTitleEl.innerText = 'DATES';
 
 let venueTitleEL = document.createElement('h4');
-venueTitleEL.classList.add('label');
+venueTitleEL.classList.add('label', 'label--top');
 venueTitleEL.innerText = 'VENUE';
 
 let locationTitleEL = document.createElement('h4');
-locationTitleEL.classList.add('label');
+locationTitleEL.classList.add('label', 'label--top');
 locationTitleEL.innerText = 'LOCATION';
 
 listEl.appendChild(labelDivEl);
@@ -59,40 +59,54 @@ showList.forEach((showObj) => {
     let showWrap = document.createElement('li');
     showWrap.classList.add('shows__item');
 
+    let dateDivEl = document.createElement('div');
+    dateDivEl.classList.add('shows__content-container');
+    
     dateTitleEl = document.createElement('h4');
-    dateTitleEl.classList.add('label');
+    dateTitleEl.classList.add('label', 'label--repeated');
     dateTitleEl.innerText = 'DATES'; 
     
     let dateParaEl = document.createElement('p');
     dateParaEl.classList.add('shows__date');
     dateParaEl.innerText = showObj.showDate; 
-
+    
+    let venueDivEl = document.createElement('div');
+    venueDivEl.classList.add('shows__content-container');
+    
     venueTitleEL = document.createElement('h4');
-    venueTitleEL.classList.add('label');
+    venueTitleEL.classList.add('label', 'label--repeated');
     venueTitleEL.innerText = 'VENUE';
-
+    
     let venueParaEl = document.createElement('p');
-    venueParaEl.classList.add('shows__date');
+    venueParaEl.classList.add('shows__venue');
     venueParaEl.innerText = showObj.showVenue; 
 
+    let locationDivEl = document.createElement('div');
+    locationDivEl.classList.add('shows__content-container');
+    
     locationTitleEL = document.createElement('h4');
-    locationTitleEL.classList.add('label');
+    locationTitleEL.classList.add('label', 'label--repeated');
     locationTitleEL.innerText = 'LOCATION';
-
+    
     let locationParaEl = document.createElement('p');
-    locationParaEl.classList.add('shows__date');
+    locationParaEl.classList.add('shows__location');
     locationParaEl.innerText = showObj.showLocation; 
     
     let btnDivEl = document.createElement('div');
     btnDivEl.classList.add('btn-container__btn');
-    btnDivEl.innerText = 'Buy Tickets'; 
-
+    btnDivEl.innerText = 'BUY TICKETS'; 
+    
     listEl.appendChild(showWrap);
-    showWrap.appendChild(dateTitleEl);
-    showWrap.appendChild(dateParaEl);
-    showWrap.appendChild(venueTitleEL);
-    showWrap.appendChild(venueParaEl);
-    showWrap.appendChild(locationTitleEL);
-    showWrap.appendChild(locationParaEl);
+
+    showWrap.appendChild(dateDivEl);
+    showWrap.appendChild(venueDivEl);
+    showWrap.appendChild(locationDivEl);
     showWrap.appendChild(btnDivEl);
+    
+    dateDivEl.appendChild(dateTitleEl);
+    dateDivEl.appendChild(dateParaEl);
+    venueDivEl.appendChild(venueTitleEL);
+    venueDivEl.appendChild(venueParaEl);
+    locationDivEl.appendChild(locationTitleEL);
+    locationDivEl.appendChild(locationParaEl);
 });

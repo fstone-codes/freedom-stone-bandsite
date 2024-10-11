@@ -143,7 +143,6 @@ body {
 
 .hero {
     position: relative;
-    @include flexbox(column, center, normal);
     padding: 0 $spacing-xsm;
     height: 60vw;
 
