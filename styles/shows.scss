@@ -12,6 +12,11 @@
     height: 18.75rem;
     @include background-image-hero-shows;
 
+    @include tablet {
+        // gap: $spacing-xsm;
+        height: 29rem;
+    }
+
     &__subtitle {
         position: relative;
         z-index: 1;
@@ -19,7 +24,7 @@
         font-weight: $font-weight-regular;
 
         @include tablet {
-            @include font-dt-page-header;
+            @include font-dt-subheader(0, 0, $primary-color-white);
         }
     }
 
@@ -33,13 +38,22 @@
         position: relative;
         z-index: 1;
         height: 7.25rem;
+
+        @include tablet {
+            margin-top: $spacing-sm;
+            width: 25rem;
+        }
     }
 }
 
 .shows {
     @include flexbox(column, normal, normal);
     gap: $spacing-xsm;
-    padding: $spacing-sm $spacing-xsm $spacing-xsm;
+    padding: $spacing-xsm $spacing-xsm $spacing-xsm;
+
+    @include tablet {
+        padding: $spacing-lg $spacing-xsm $spacing-med $spacing-xsm;
+    }
 
     &__title {
         @include font-header($secondary-color-bandsite-black);
@@ -50,6 +64,7 @@
     }
 
     &__list {
+        @include flexbox(column, normal, normal);
         list-style-type: none;
     }
 
@@ -57,7 +72,9 @@
         display: none;
 
         @include tablet {
-            @include flexbox(row, normal, normal);
+            @include flexbox(row, space-between, center);
+            width: 75%;
+            padding-left: $spacing-xsm;
         }
     }
 
@@ -66,24 +83,51 @@
         gap: $spacing-xsm;
         border-bottom: 1px solid $secondary-color-mercury;
         padding: $spacing-xsm 0;
+
+        @include tablet {
+            @include flexbox(row, space-between, center);
+            width: 100%;
+            padding: $spacing-xsm $spacing-xsm;
+            // gap: 48px;
+        }
+    }
+
+    &__content-container {
+        @include tablet {
+            @include flexbox(row, flex-start, center);
+            flex: 1;
+            max-width: 25%;
+        }
     }
 
     &__date {
+        // flex: 1;
         font-weight: $font-weight-demi;
     }
 
     &__venue {
+        // max-width: 25%;
     }
 
     &__location {
+        // flex: 1;
+        // max-width: 25%;
     }
 }
 
 .label {
     &--top {
+        @include tablet {
+            @include flexbox(row, flex-start, center);
+            flex: 1;
+            max-width: 33%;
+        }
     }
 
     &--repeated {
         margin-bottom: 0.5rem;
+        @include tablet {
+            display: none;
+        }
     }
 }

@@ -93,7 +93,7 @@ showList.forEach((showObj) => {
     locationParaEl.innerText = showObj.showLocation; 
     
     let btnDivEl = document.createElement('div');
-    btnDivEl.classList.add('btn-container__btn');
+    btnDivEl.classList.add('btn');
     btnDivEl.innerText = 'BUY TICKETS'; 
     
     listEl.appendChild(showWrap);

@@ -71,7 +71,11 @@
         );
 
         @include tablet {
-            @include font-dt-subheader($spacing-med, $spacing-xsm);
+            @include font-dt-subheader(
+                $spacing-med,
+                $spacing-xsm,
+                $secondary-color-bandsite-black
+            );
         }
 
         @include desktop {
@@ -96,7 +100,11 @@
         );
 
         @include tablet {
-            @include font-dt-subheader(calc($spacing-xsm * 3.5), $spacing-sm);
+            @include font-dt-subheader(
+                calc($spacing-xsm * 3.5),
+                $spacing-sm,
+                $secondary-color-bandsite-black
+            );
         }
     }
 

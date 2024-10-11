@@ -178,18 +178,22 @@ body {
 
 .btn-container {
     @include flexbox(column, normal, normal);
+}
 
-    &__btn {
-        height: 40px;
-        padding: 0 $spacing-med;
-        border-radius: 4px;
-        background-color: $primary-color-bandsite-black;
-        @include font-body($primary-color-white);
-        border-style: none;
+.btn {
+    @include flexbox(column, center, center);
+    height: 40px;
+    padding: 0 $spacing-med;
+    border-radius: 4px;
+    background-color: $primary-color-bandsite-black;
+    @include font-body($primary-color-white);
+    border-style: none;
 
-        @include tablet {
-            flex: 0 0 9.375rem;
-        }
+    @include tablet {
+        // flex: 0 0 9.375rem;
+        @include flexbox(row, flex-start, center);
+        flex: 1;
+        max-width: 25%;
     }
 }
 

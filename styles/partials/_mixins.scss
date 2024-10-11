@@ -86,9 +86,9 @@
     line-height: 2.75rem;
 }
 
-@mixin font-dt-subheader($margin-top, $margin-bottom) {
+@mixin font-dt-subheader($margin-top, $margin-bottom, $color) {
     margin: $margin-top 0 $margin-bottom;
-    color: $primary-color-bandsite-black;
+    color: $color;
     font-size: $font-size-dt-medium;
     font-weight: $font-weight-demi;
     line-height: 2rem;
