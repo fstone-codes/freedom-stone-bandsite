@@ -61,25 +61,27 @@
         </section>
         <section class="comment">
             <h2 class="comment__title">Join the Conversation</h2>
-            <div class="comment__input">
-                <div class="comment__image-container">
-                    <img class="comment__image" src="./assets/images/Mohan-muruge.jpg" alt="user image">
+            <div class="comment__dt-container">
+                <div class="comment__input">
+                    <div class="comment__image-container">
+                        <img class="comment__image" src="./assets/images/Mohan-muruge.jpg" alt="user image">
+                    </div>
+                    <form class="form">
+                        <div class="form__container">
+                            <label class="label" for="userName">NAME</label>
+                            <input class="form__input" type="text" name="userName" id="userName" placeholder="Enter your name" autocomplete="name">
+                        </div>
+                        <div class="form__container">
+                            <label class="label" for="userComment">COMMENT</label>
+                            <textarea class="form__input" name="userComment" id="userComment" placeholder="Add a new comment"></textarea>
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn-container__btn" type="submit">COMMENT</button>
+                        </div>
+                    </form>
                 </div>
-                <form class="form">
-                    <div class="form__container">
-                        <label class="form__label" for="userName">NAME</label>
-                        <input class="form__input" type="text" name="userName" id="userName" placeholder="Enter your name">
-                    </div>
-                    <div class="form__container">
-                        <label class="form__label" for="userComment">COMMENT</label>
-                        <textarea class="form__input" name="userComment" id="userComment" placeholder="Add a new comment"></textarea>
-                    </div>
-                    <div class="btn-container">
-                        <button class="btn-container__btn" type="submit">COMMENT</button>
-                    </div>
-                </form>
+                <ul class="comment__list"></ul>
             </div>
-            <ul class="comment__list"></ul>
         </section>
     </main>
     <footer class="footer">

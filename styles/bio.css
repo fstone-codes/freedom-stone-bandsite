@@ -4,17 +4,22 @@
 
 a,
 body,
+button,
 footer,
+form,
 h1,
 h2,
 h3,
+h4,
 header,
 html,
 img,
+input,
 li,
 p,
 section,
 span,
+textarea,
 ul {
   margin: 0;
   padding: 0;
@@ -214,11 +219,19 @@ body {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
+  border-style: none;
 }
 @media (min-width: 768px) {
   .btn-container__btn {
     flex: 0 0 9.375rem;
   }
+}
+
+.label {
+  color: #afafaf;
+  font-size: 0.625rem;
+  font-weight: 600;
+  line-height: 1.25rem;
 }
 
 .footer {
@@ -420,14 +433,14 @@ body {
   }
 }
 .about__title {
-  color: #323232;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
 }
 @media (min-width: 768px) {
   .about__title {
-    color: #323232;
+    color: #000000;
     font-size: 2.25rem;
     font-weight: 600;
     line-height: 2.75rem;
@@ -473,7 +486,7 @@ body {
 }
 .about__quote {
   margin: 1rem 0 0.5rem;
-  color: #323232;
+  color: #000000;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
@@ -495,14 +508,14 @@ body {
 }
 .about__quote-author {
   margin: 0 0 0;
-  color: #323232;
+  color: #000000;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
 }
 @media (min-width: 768px) {
   .about__quote-author {
-    color: #323232;
+    color: #000000;
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.375rem;
@@ -510,7 +523,7 @@ body {
 }
 .about__subtitle {
   margin: 1.5rem 0 1rem;
-  color: #323232;
+  color: #000000;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
@@ -541,14 +554,14 @@ body {
   }
 }
 .about__detail {
-  color: #323232;
+  color: #000000;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
   .about__detail {
-    color: #323232;
+    color: #000000;
     font-size: 0.875rem;
     font-weight: 400;
     line-height: 1.375rem;
@@ -577,14 +590,14 @@ body {
   }
 }
 .gallery__title {
-  color: #323232;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
 }
 @media (min-width: 768px) {
   .gallery__title {
-    color: #323232;
+    color: #000000;
     font-size: 2.25rem;
     font-weight: 600;
     line-height: 2.75rem;
@@ -633,15 +646,31 @@ body {
   gap: 1rem;
   padding: 1.5rem 1rem 1rem;
 }
+.comment__dt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+}
+@media (min-width: 768px) {
+  .comment__dt-container {
+    padding: 0 3.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment__dt-container {
+    padding: 0 5.5rem;
+  }
+}
 .comment__title {
-  color: #323232;
+  color: #000000;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 2rem;
 }
 @media (min-width: 768px) {
   .comment__title {
-    color: #323232;
+    color: #000000;
     font-size: 2.25rem;
     font-weight: 600;
     line-height: 2.75rem;
@@ -649,11 +678,12 @@ body {
 }
 .comment__input {
   position: relative;
-  padding-left: 3.75rem;
+  padding: 0 0 1rem 3.75rem;
+  border-bottom: 1px solid #e1e1e1;
 }
 .comment__image-container {
   position: absolute;
-  top: 1.25rem;
+  top: 2.5625rem;
   left: 0;
   width: 2.25rem;
   aspect-ratio: 1/1;
@@ -666,9 +696,39 @@ body {
     width: 3rem;
   }
 }
+.comment__image-container--list {
+  top: 1rem;
+}
 .comment__image {
   height: 100%;
   aspect-ratio: auto;
+}
+.comment__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  list-style-type: none;
+}
+.comment__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: 1rem;
+  padding: 1rem 0 1rem 3.75rem;
+  border-bottom: 1px solid #e1e1e1;
+  color: #000000;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+.comment__content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form {
@@ -698,6 +758,14 @@ body {
   border-radius: 4px;
   background-color: #fafafa;
   font-family: "Avenir Next", sans-serif;
-  color: #323232;
+  color: #000000;
   resize: none;
+}
+
+::-moz-placeholder {
+  color: #000000;
+}
+
+::placeholder {
+  color: #000000;
 }/*# sourceMappingURL=bio.css.map */

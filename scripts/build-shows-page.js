@@ -35,32 +35,32 @@ const showList = [
 let listEl = document.querySelector('.shows__list');
 
 // 
-let subtitleDivEl = document.createElement('div');
-subtitleDivEl.classList.add('shows__subtitle-container');
+let labelDivEl = document.createElement('div');
+labelDivEl.classList.add('shows__label-container');
 
 let dateTitleEl = document.createElement('h4');
-dateTitleEl.classList.add('shows__subtitle');
+dateTitleEl.classList.add('label');
 dateTitleEl.innerText = 'DATES';
 
 let venueTitleEL = document.createElement('h4');
-venueTitleEL.classList.add('shows__subtitle');
+venueTitleEL.classList.add('label');
 venueTitleEL.innerText = 'VENUE';
 
 let locationTitleEL = document.createElement('h4');
-locationTitleEL.classList.add('shows__subtitle');
+locationTitleEL.classList.add('label');
 locationTitleEL.innerText = 'LOCATION';
 
-listEl.appendChild(subtitleDivEl);
-subtitleDivEl.appendChild(dateTitleEl);
-subtitleDivEl.appendChild(venueTitleEL);
-subtitleDivEl.appendChild(locationTitleEL);
+listEl.appendChild(labelDivEl);
+labelDivEl.appendChild(dateTitleEl);
+labelDivEl.appendChild(venueTitleEL);
+labelDivEl.appendChild(locationTitleEL);
 
 showList.forEach((showObj) => {
     let showWrap = document.createElement('li');
     showWrap.classList.add('shows__item');
 
     dateTitleEl = document.createElement('h4');
-    dateTitleEl.classList.add('shows__subtitle');
+    dateTitleEl.classList.add('label');
     dateTitleEl.innerText = 'DATES'; 
     
     let dateParaEl = document.createElement('p');
@@ -68,7 +68,7 @@ showList.forEach((showObj) => {
     dateParaEl.innerText = showObj.showDate; 
 
     venueTitleEL = document.createElement('h4');
-    venueTitleEL.classList.add('shows__subtitle');
+    venueTitleEL.classList.add('label');
     venueTitleEL.innerText = 'VENUE';
 
     let venueParaEl = document.createElement('p');
@@ -76,7 +76,7 @@ showList.forEach((showObj) => {
     venueParaEl.innerText = showObj.showVenue; 
 
     locationTitleEL = document.createElement('h4');
-    locationTitleEL.classList.add('shows__subtitle');
+    locationTitleEL.classList.add('label');
     locationTitleEL.innerText = 'LOCATION';
 
     let locationParaEl = document.createElement('p');
@@ -96,40 +96,3 @@ showList.forEach((showObj) => {
     showWrap.appendChild(locationParaEl);
     showWrap.appendChild(btnDivEl);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* // create <div> child element to <ul>
-let divElHeader = document.createElement('div');
-divElHeader.classList.add('shows__subtitle-container');
-listEl.appendChild(divElHeader);
-
-let subtitleNames = ['DATES', 'VENUE', 'LOCATION'];
-
-// create loop that iterates through array to add a corresponding element tag for each index
-for (let i = 0; i < Object.keys(showList[i]).length - 1; i++) {
-    let subtitle = document.createElement('h4');
-    subtitle.classList.add('shows__subtitle');
-    subtitle.innerText = subtitleNames[i];
-    divElHeader.appendChild(subtitle);
-}
-
-// create <li> children elements to <ul>
-for (let i = 0; i < showList.length; i++) {
-    let itemEl = document.createElement('li');
-    itemEl.classList.add('shows__item');
-    listEl.appendChild(itemEl);
-} */

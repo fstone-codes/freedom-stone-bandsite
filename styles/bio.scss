@@ -26,10 +26,10 @@
     }
 
     &__title {
-        @include font-header($primary-color-bandsite-black);
+        @include font-header($secondary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-section-header($primary-color-bandsite-black);
+            @include font-dt-section-header($secondary-color-bandsite-black);
         }
     }
 
@@ -66,7 +66,7 @@
         @include font-subheader(
             $spacing-xsm,
             calc($spacing-xsm * 0.5),
-            $primary-color-bandsite-black
+            $secondary-color-bandsite-black
         );
 
         @include tablet {
@@ -80,15 +80,19 @@
     }
 
     &__quote-author {
-        @include font-subheader(0, 0, $primary-color-bandsite-black);
+        @include font-subheader(0, 0, $secondary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-body($primary-color-bandsite-black, $font-weight-demi);
+            @include font-dt-body($secondary-color-bandsite-black, $font-weight-demi);
         }
     }
 
     &__subtitle {
-        @include font-subheader($spacing-sm, $spacing-xsm, $primary-color-bandsite-black);
+        @include font-subheader(
+            $spacing-sm,
+            $spacing-xsm,
+            $secondary-color-bandsite-black
+        );
 
         @include tablet {
             @include font-dt-subheader(calc($spacing-xsm * 3.5), $spacing-sm);
@@ -106,10 +110,10 @@
     }
 
     &__detail {
-        @include font-body($primary-color-bandsite-black);
+        @include font-body($secondary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-body($primary-color-bandsite-black, $font-weight-regular);
+            @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
         }
     }
 }
@@ -131,10 +135,10 @@
     }
 
     &__title {
-        @include font-header($primary-color-bandsite-black);
+        @include font-header($secondary-color-bandsite-black);
 
         @include tablet {
-            @include font-dt-section-header($primary-color-bandsite-black);
+            @include font-dt-section-header($secondary-color-bandsite-black);
         }
     }
 
@@ -170,22 +174,35 @@
     gap: $spacing-xsm;
     padding: $spacing-sm $spacing-xsm $spacing-xsm;
 
-    &__title {
-        @include font-header($primary-color-bandsite-black);
+    &__dt-container {
+        @include flexbox(column, normal, normal);
 
         @include tablet {
-            @include font-dt-section-header($primary-color-bandsite-black);
+            padding: 0 calc($spacing-xsm * 3.5);
+        }
+
+        @include desktop {
+            padding: 0 calc($spacing-xsm * 5.5);
+        }
+    }
+
+    &__title {
+        @include font-header($secondary-color-bandsite-black);
+
+        @include tablet {
+            @include font-dt-section-header($secondary-color-bandsite-black);
         }
     }
 
     &__input {
         position: relative;
-        padding-left: 3.75rem;
+        padding: 0 0 $spacing-xsm 3.75rem;
+        border-bottom: 1px solid $secondary-color-mercury;
     }
 
     &__image-container {
         position: absolute;
-        top: 1.25rem;
+        top: 2.5625rem;
         left: 0;
         width: 2.25rem;
         aspect-ratio: 1 / 1;
@@ -196,12 +213,43 @@
         @include tablet {
             width: 3rem;
         }
+
+        &--list {
+            top: $spacing-xsm;
+        }
     }
 
     &__image {
         height: 100%;
         aspect-ratio: auto;
     }
+
+    &__list {
+        @include flexbox(column, normal, normal);
+        list-style-type: none;
+    }
+
+    &__item {
+        position: relative;
+        @include flexbox(column, normal, normal);
+        gap: $spacing-xsm;
+        padding: $spacing-xsm 0 $spacing-xsm 3.75rem;
+        border-bottom: 1px solid $secondary-color-mercury;
+        @include font-body($secondary-color-bandsite-black);
+    }
+
+    &__content-container {
+        @include flexbox(row, space-between, center);
+    }
+
+    // &__name {
+    // }
+
+    // &__date {
+    // }
+
+    // &__comment-text {
+    // }
 }
 
 .form {
@@ -224,7 +272,11 @@
         border-radius: 4px;
         background-color: $secondary-color-alabaster;
         font-family: "Avenir Next", sans-serif;
-        color: $primary-color-bandsite-black;
+        color: $secondary-color-bandsite-black;
         resize: none;
     }
+}
+
+::placeholder {
+    color: $secondary-color-bandsite-black;
 }

@@ -27,7 +27,7 @@ function renderComment() {
         commentWrap.classList.add('comment__item');
         
         let imgDivEl = document.createElement('div');
-        imgDivEl.classList.add('comment__image-container');
+        imgDivEl.classList.add('comment__image-container', 'comment__image-container--list');
     
         let imgEl = document.createElement('img');
         imgEl.classList.add('comment__image');

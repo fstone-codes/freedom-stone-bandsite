@@ -8,17 +8,22 @@
 
 a,
 body,
+button,
 footer,
+form,
 h1,
 h2,
 h3,
+h4,
 header,
 html,
 img,
+input,
 li,
 p,
 section,
 span,
+textarea,
 ul {
     margin: 0;
     padding: 0;
@@ -181,11 +186,18 @@ body {
         border-radius: 4px;
         background-color: $primary-color-bandsite-black;
         @include font-body($primary-color-white);
+        border-style: none;
 
         @include tablet {
             flex: 0 0 9.375rem;
         }
     }
+}
+
+.label {
+    // @include flexbox(column, normal, normal);
+    // gap: $spacing-xsm;
+    @include font-tiny($primary-color-silver, $font-weight-demi);
 }
 
 .footer {
