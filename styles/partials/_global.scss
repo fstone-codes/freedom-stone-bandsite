@@ -176,6 +176,7 @@ body {
     }
 }
 
+// check if needed still
 .btn-container {
     @include flexbox(column, normal, normal);
 }
@@ -194,6 +195,10 @@ body {
         flex: 1;
         max-width: 25%;
         @include font-dt-body($primary-color-white, $font-weight-demi);
+    }
+
+    &:hover {
+        background-color: $secondary-color-bandsite-black;
     }
 }
 
@@ -278,6 +283,9 @@ body {
             @include font-dt-body($secondary-color-mercury, $font-weight-regular);
         }
     }
+
+    // &__org-container {
+    // }
 
     &__org {
         @include font-subheader(0, 0, $secondary-color-mercury);

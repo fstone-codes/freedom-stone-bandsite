@@ -236,6 +236,9 @@ body {
     line-height: 1.375rem;
   }
 }
+.btn:hover {
+  background-color: #000000;
+}
 
 .label {
   color: #afafaf;
