@@ -214,12 +214,13 @@ body {
   height: 40px;
   padding: 0 2rem;
   border-radius: 4px;
+  border-style: none;
   background-color: #323232;
   color: #ffffff;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
-  border-style: none;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .btn {

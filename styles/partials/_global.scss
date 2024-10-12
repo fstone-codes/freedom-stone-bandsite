@@ -185,9 +185,10 @@ body {
     height: 40px;
     padding: 0 $spacing-med;
     border-radius: 4px;
+    border-style: none;
     background-color: $primary-color-bandsite-black;
     @include font-body($primary-color-white);
-    border-style: none;
+    font-weight: $font-weight-demi;
 
     @include tablet {
         @include flexbox(row, center, center);

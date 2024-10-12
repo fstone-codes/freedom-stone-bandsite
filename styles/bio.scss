@@ -80,11 +80,7 @@
         );
 
         @include tablet {
-            @include font-dt-subheader(
-                $spacing-med,
-                $spacing-xsm,
-                $secondary-color-bandsite-black
-            );
+            @include font-dt-subheader($spacing-med, $spacing-xsm, $secondary-color-bandsite-black);
         }
 
         @include desktop {
@@ -102,11 +98,7 @@
     }
 
     &__subtitle {
-        @include font-subheader(
-            $spacing-sm,
-            $spacing-xsm,
-            $secondary-color-bandsite-black
-        );
+        @include font-subheader($spacing-sm, $spacing-xsm, $secondary-color-bandsite-black);
 
         @include tablet {
             @include font-dt-subheader(
@@ -295,6 +287,10 @@
         @include flexbox(column, normal, normal);
     }
 
+    &__label-container {
+        @include flexbox(row, space-between, normal);
+    }
+
     &__input {
         width: 100%;
         min-height: $spacing-med;
@@ -313,22 +309,37 @@
             @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
         }
 
-        @include tablet {
-        }
-
         &:focus {
             outline: $secondary-color-bandsite-black solid 1px;
         }
 
-        // &:focus:invalid {
-        //     outline: #d22d2d solid 1px;
-        // }
+        /* 
+
+        // Alternate way to show red border (*must be paired with required attribute in form input/textarea elements)
+
+        &:user-invalid {
+            outline: #d22d2d solid 1px;
+        } 
+            
+        */
     }
 
     &__container--btn {
         @include tablet {
             @include flexbox(row, flex-end, normal);
         }
+    }
+}
+
+.error {
+    @include font-tiny(#d22d2d, $font-weight-demi);
+
+    @include tablet {
+        @include font-dt-tiny(#d22d2d);
+    }
+
+    &--active ~ .form__input {
+        outline: #d22d2d solid 1px;
     }
 }
 
