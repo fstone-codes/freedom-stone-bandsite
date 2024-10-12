@@ -114,3 +114,14 @@ showList.forEach((showObj) => {
     locationDivEl.appendChild(locationTitleEL);
     locationDivEl.appendChild(locationParaEl);
 });
+
+let allItems = document.querySelectorAll('.shows__item');
+
+allItems.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            allItems.forEach((removalItem) => {
+                removalItem.classList.remove('shows__item--selected');
+            });
+            e.currentTarget.classList.add('shows__item--selected');
+    });
+});

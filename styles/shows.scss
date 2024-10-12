@@ -132,6 +132,18 @@
             // gap: 48px;
             @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
         }
+
+        &:hover {
+            background-color: $secondary-color-alabaster;
+        }
+
+        &--selected {
+            background-color: $secondary-color-mercury;
+
+            &:hover {
+                background-color: $secondary-color-mercury;
+            }
+        }
     }
 
     &__content-container {
