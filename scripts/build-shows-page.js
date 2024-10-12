@@ -122,6 +122,6 @@ allItems.forEach((item) => {
             allItems.forEach((removalItem) => {
                 removalItem.classList.remove('shows__item--selected');
             });
-            e.currentTarget.classList.add('shows__item--selected');
+        e.currentTarget.classList.add('shows__item--selected');
     });
 });

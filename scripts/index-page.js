@@ -19,57 +19,66 @@ const commentList = [
 // pointing to <ul> element (aka comment section container)
 let listEl = document.querySelector('.comment__list');
 
-function renderComment() {
-    listEl.innerHTML = '';
+// create function that will create elements for each post / array object
+function createCommentPost(commentObj) {
+    let commentWrap = document.createElement('li');
+    commentWrap.classList.add('comment__item');
+    
+    let imgDivEl = document.createElement('div');
+    imgDivEl.classList.add('comment__image-container', 'comment__image-container--list');
 
-    commentList.forEach((commentObj) => {
-        let commentWrap = document.createElement('li');
-        commentWrap.classList.add('comment__item');
-        
-        let imgDivEl = document.createElement('div');
-        imgDivEl.classList.add('comment__image-container', 'comment__image-container--list');
+    let imgEl = document.createElement('img');
+    imgEl.classList.add('comment__image');
     
-        let imgEl = document.createElement('img');
-        imgEl.classList.add('comment__image');
-        
-        let infoDivEl = document.createElement('div');
-        infoDivEl.classList.add('comment__content-container');
+    let infoDivEl = document.createElement('div');
+    infoDivEl.classList.add('comment__content-container');
+
+    let nameParaEl = document.createElement('p');
+    nameParaEl.classList.add('comment__name');
+    nameParaEl.innerText = commentObj.userName;
     
-        let nameParaEl = document.createElement('p');
-        nameParaEl.classList.add('comment__name');
-        nameParaEl.innerText = commentObj.userName;
-        
-        let dateParaEl = document.createElement('p');
-        dateParaEl.classList.add('comment__date');
-        dateParaEl.innerText = commentObj.commentDate;
-        
-        let commDivEl = document.createElement('div');
-        commDivEl.classList.add('comment__content-container');
-        
-        let commParaEl = document.createElement('p');
-        commParaEl.classList.add('comment__comment-text');
-        commParaEl.innerText = commentObj.userComment;
-        
-        listEl.appendChild(commentWrap);
+    let dateParaEl = document.createElement('p');
+    dateParaEl.classList.add('comment__date');
+    dateParaEl.innerText = commentObj.commentDate;
     
-        commentWrap.appendChild(imgDivEl);
-        commentWrap.appendChild(infoDivEl);
-        commentWrap.appendChild(commDivEl);
-        
-        imgDivEl.appendChild(imgEl);
+    let commDivEl = document.createElement('div');
+    commDivEl.classList.add('comment__content-container');
     
-        infoDivEl.appendChild(nameParaEl);
-        infoDivEl.appendChild(dateParaEl);
-        
-        commDivEl.appendChild(commParaEl);
+    let commParaEl = document.createElement('p');
+    commParaEl.classList.add('comment__comment-text');
+    commParaEl.innerText = commentObj.userComment;
+    
+    listEl.appendChild(commentWrap);
+
+    commentWrap.appendChild(imgDivEl);
+    commentWrap.appendChild(infoDivEl);
+    commentWrap.appendChild(commDivEl);
+    
+    imgDivEl.appendChild(imgEl);
+
+    infoDivEl.appendChild(nameParaEl);
+    infoDivEl.appendChild(dateParaEl);
+    
+    commDivEl.appendChild(commParaEl);
+}
+
+// create function that will render the comment posts for each array object
+function renderComment() {
+    // clear the children elements within <ul> to avoid duplication
+    listEl.replaceChildren();
+
+    commentList.forEach((commentItem) => {
+        createCommentPost(commentItem);
     });
 }
 
+// invoke the function to ensure existing comments are initially rendered
 renderComment();
 
 // pointing to <form> element
 let form = document.querySelector('.form');
 
+// add event submit event listener for the <form> element
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -83,6 +92,7 @@ form.addEventListener('submit', (e) => {
         day: '2-digit'
     })
 
+    // add the new comment post to the beginning of the array of object (i.e. index 0)
     commentList.unshift({
         userName: valueUserName,
         userComment: valueUserComment,
@@ -95,7 +105,10 @@ form.addEventListener('submit', (e) => {
 
     // }
 
+    // invoke the render function again to display the newly submitted comment
     renderComment();
+    
+    // clear the input fields to signal a complete submission
     form.reset();
 })
 
