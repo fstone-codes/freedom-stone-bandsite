@@ -8,7 +8,16 @@
 
 .hero {
     @include flexbox(column, center, normal);
+    height: 12rem;
     @include background-image-hero-index;
+
+    @include tablet {
+        height: 28.75rem;
+    }
+
+    @include desktop {
+        height: 40rem;
+    }
 }
 
 .about {
@@ -183,6 +192,16 @@
     gap: $spacing-xsm;
     padding: $spacing-sm $spacing-xsm $spacing-xsm;
 
+    @include tablet {
+        gap: $spacing-sm;
+        padding: $spacing-lg $spacing-med $spacing-med;
+    }
+
+    @include desktop {
+        gap: $spacing-med;
+        padding: calc($spacing-xsm * 4) $spacing-xlg $spacing-lg;
+    }
+
     &__dt-container {
         @include flexbox(column, normal, normal);
 
@@ -205,13 +224,13 @@
 
     &__input {
         position: relative;
-        padding: 0 0 $spacing-xsm 3.75rem;
+        padding: 0 0 $spacing-xsm calc($spacing-xsm * 3.75);
         border-bottom: 1px solid $secondary-color-mercury;
     }
 
     &__image-container {
         position: absolute;
-        top: 2.5625rem;
+        top: 27px;
         left: 0;
         width: 2.25rem;
         aspect-ratio: 1 / 1;
@@ -242,20 +261,27 @@
         position: relative;
         @include flexbox(column, normal, normal);
         gap: $spacing-xsm;
-        padding: $spacing-xsm 0 $spacing-xsm 3.75rem;
+        padding: $spacing-xsm 0 $spacing-xsm calc($spacing-xsm * 3.25);
         border-bottom: 1px solid $secondary-color-mercury;
         @include font-body($secondary-color-bandsite-black);
+
+        @include tablet {
+            padding: $spacing-xsm 0 $spacing-xsm calc($spacing-xsm * 3.75);
+            @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
+        }
     }
 
     &__content-container {
         @include flexbox(row, space-between, center);
     }
 
-    // &__name {
-    // }
+    &__name {
+        font-weight: $font-weight-demi;
+    }
 
-    // &__date {
-    // }
+    &__date {
+        color: $primary-color-silver;
+    }
 
     // &__comment-text {
     // }
@@ -269,20 +295,24 @@
         @include flexbox(column, normal, normal);
     }
 
-    &__label {
-        @include font-tiny($primary-color-silver, $font-weight-demi);
-    }
+    // &__container--btn {
+    // }
 
     &__input {
         min-height: 2.25rem;
         width: 100%;
-        padding: $spacing-xsm;
+        margin-top: 0.25rem;
+        padding: 0.75rem;
         border: 1px solid $primary-color-silver;
         border-radius: 4px;
         background-color: $secondary-color-alabaster;
         font-family: "Avenir Next", sans-serif;
         color: $secondary-color-bandsite-black;
         resize: none;
+
+        @include tablet {
+            padding: $spacing-xsm;
+        }
     }
 }
 

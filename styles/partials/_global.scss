@@ -144,7 +144,6 @@ body {
 .hero {
     position: relative;
     padding: 0 $spacing-xsm;
-    height: 60vw;
 
     @include tablet {
         padding: 0 $spacing-med;
@@ -152,7 +151,6 @@ body {
 
     @include desktop {
         padding: 0 $spacing-xlg;
-        height: 50vw;
     }
 
     &__overlay {
@@ -203,8 +201,6 @@ body {
 }
 
 .label {
-    // @include flexbox(column, normal, normal);
-    // gap: $spacing-xsm;
     @include font-tiny($primary-color-silver, $font-weight-demi);
 }
 

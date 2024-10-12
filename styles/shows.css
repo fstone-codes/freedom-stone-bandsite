@@ -161,7 +161,6 @@ body {
 .hero {
   position: relative;
   padding: 0 1rem;
-  height: 60vw;
 }
 @media (min-width: 768px) {
   .hero {
@@ -171,7 +170,6 @@ body {
 @media (min-width: 1280px) {
   .hero {
     padding: 0 8rem;
-    height: 50vw;
   }
 }
 .hero__overlay {
@@ -600,6 +598,7 @@ body {
 .shows__date {
   font-weight: 600;
 }
+
 @media (min-width: 768px) {
   .label--top {
     display: flex;

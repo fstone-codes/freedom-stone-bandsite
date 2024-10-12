@@ -161,7 +161,6 @@ body {
 .hero {
   position: relative;
   padding: 0 1rem;
-  height: 60vw;
 }
 @media (min-width: 768px) {
   .hero {
@@ -171,7 +170,6 @@ body {
 @media (min-width: 1280px) {
   .hero {
     padding: 0 8rem;
-    height: 50vw;
   }
 }
 .hero__overlay {
@@ -424,9 +422,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: normal;
+  height: 12rem;
   background-image: url("../../assets/images/hero-bio.jpg");
   background-position: center;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 28.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    height: 40rem;
+  }
 }
 
 .about {
@@ -663,6 +672,18 @@ body {
   gap: 1rem;
   padding: 1.5rem 1rem 1rem;
 }
+@media (min-width: 768px) {
+  .comment {
+    gap: 1.5rem;
+    padding: 3rem 2rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment {
+    gap: 2rem;
+    padding: 4rem 8rem 3rem;
+  }
+}
 .comment__dt-container {
   display: flex;
   flex-direction: column;
@@ -700,7 +721,7 @@ body {
 }
 .comment__image-container {
   position: absolute;
-  top: 2.5625rem;
+  top: 27px;
   left: 0;
   width: 2.25rem;
   aspect-ratio: 1/1;
@@ -734,18 +755,33 @@ body {
   justify-content: normal;
   align-items: normal;
   gap: 1rem;
-  padding: 1rem 0 1rem 3.75rem;
+  padding: 1rem 0 1rem 3.25rem;
   border-bottom: 1px solid #e1e1e1;
   color: #000000;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
 }
+@media (min-width: 768px) {
+  .comment__item {
+    padding: 1rem 0 1rem 3.75rem;
+    color: #000000;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+  }
+}
 .comment__content-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.comment__name {
+  font-weight: 600;
+}
+.comment__date {
+  color: #afafaf;
 }
 
 .form {
@@ -761,22 +797,22 @@ body {
   justify-content: normal;
   align-items: normal;
 }
-.form__label {
-  color: #afafaf;
-  font-size: 0.625rem;
-  font-weight: 600;
-  line-height: 1.25rem;
-}
 .form__input {
   min-height: 2.25rem;
   width: 100%;
-  padding: 1rem;
+  margin-top: 0.25rem;
+  padding: 0.75rem;
   border: 1px solid #afafaf;
   border-radius: 4px;
   background-color: #fafafa;
   font-family: "Avenir Next", sans-serif;
   color: #000000;
   resize: none;
+}
+@media (min-width: 768px) {
+  .form__input {
+    padding: 1rem;
+  }
 }
 
 ::-moz-placeholder {
