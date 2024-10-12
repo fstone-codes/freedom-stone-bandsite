@@ -181,6 +181,7 @@ body {
 
 .btn {
     @include flexbox(column, center, center);
+    min-width: 9.375rem;
     height: 40px;
     padding: 0 $spacing-med;
     border-radius: 4px;
@@ -202,6 +203,10 @@ body {
 
 .label {
     @include font-tiny($primary-color-silver, $font-weight-demi);
+
+    @include tablet {
+        @include font-dt-tiny($primary-color-silver);
+    }
 }
 
 .footer {

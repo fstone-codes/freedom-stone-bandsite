@@ -210,7 +210,7 @@
         }
 
         @include desktop {
-            padding: 0 calc($spacing-xsm * 5.5);
+            padding: 0 calc($spacing-xsm * 16.5);
         }
     }
 
@@ -222,7 +222,7 @@
         }
     }
 
-    &__input {
+    &__input-container {
         position: relative;
         padding: 0 0 $spacing-xsm calc($spacing-xsm * 3.75);
         border-bottom: 1px solid $secondary-color-mercury;
@@ -260,7 +260,7 @@
     &__item {
         position: relative;
         @include flexbox(column, normal, normal);
-        gap: $spacing-xsm;
+        gap: calc($spacing-xsm / 2);
         padding: $spacing-xsm 0 $spacing-xsm calc($spacing-xsm * 3.25);
         border-bottom: 1px solid $secondary-color-mercury;
         @include font-body($secondary-color-bandsite-black);
@@ -295,15 +295,12 @@
         @include flexbox(column, normal, normal);
     }
 
-    // &__container--btn {
-    // }
-
     &__input {
-        min-height: 2.25rem;
         width: 100%;
+        min-height: $spacing-med;
         margin-top: 0.25rem;
         padding: 0.75rem;
-        border: 1px solid $primary-color-silver;
+        border: 1px solid $secondary-color-mercury;
         border-radius: 4px;
         background-color: $secondary-color-alabaster;
         font-family: "Avenir Next", sans-serif;
@@ -312,6 +309,25 @@
 
         @include tablet {
             padding: $spacing-xsm;
+            min-height: $spacing-lg;
+            @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
+        }
+
+        @include tablet {
+        }
+
+        &:focus {
+            outline: $secondary-color-bandsite-black solid 1px;
+        }
+
+        // &:focus:invalid {
+        //     outline: #d22d2d solid 1px;
+        // }
+    }
+
+    &__container--btn {
+        @include tablet {
+            @include flexbox(row, flex-end, normal);
         }
     }
 }
