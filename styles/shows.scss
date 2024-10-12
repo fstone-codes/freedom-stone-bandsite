@@ -13,8 +13,11 @@
     @include background-image-hero-shows;
 
     @include tablet {
-        // gap: $spacing-xsm;
         height: 29rem;
+    }
+
+    @include desktop {
+        height: 38rem;
     }
 
     &__subtitle {
@@ -28,20 +31,38 @@
         }
     }
 
-    &__title-container {
+    &__title {
+        width: 75%;
+
+        @include desktop {
+            width: 45%;
+        }
     }
 
-    &__player-container {
+    &__container {
+        @include desktop {
+            @include flexbox(row, space-between, center);
+        }
     }
+
+    // &__player-container {
+    // }
 
     &__player {
         position: relative;
         z-index: 1;
         height: 7.25rem;
+        margin-top: $spacing-xsm;
 
         @include tablet {
             margin-top: $spacing-sm;
             width: 25rem;
+        }
+
+        @include desktop {
+            // position: absolute;
+            // top: 0;
+            // right: 0;
         }
     }
 }
@@ -52,7 +73,17 @@
     padding: $spacing-xsm $spacing-xsm $spacing-xsm;
 
     @include tablet {
+        gap: $spacing-sm;
         padding: $spacing-lg $spacing-xsm $spacing-med $spacing-xsm;
+    }
+
+    @include desktop {
+        gap: 0;
+        padding: calc($spacing-xsm * 4) calc($spacing-xlg - 1rem) $spacing-lg $spacing-xlg;
+    }
+
+    @include desktop {
+        @include flexbox(row, space-between, flex-start);
     }
 
     &__title {
@@ -60,12 +91,21 @@
 
         @include tablet {
             @include font-dt-section-header($secondary-color-bandsite-black);
+            padding: 0 $spacing-xsm;
+        }
+
+        @include desktop {
+            padding: 0;
         }
     }
 
     &__list {
         @include flexbox(column, normal, normal);
         list-style-type: none;
+
+        @include desktop {
+            width: 70%;
+        }
     }
 
     &__label-container {
@@ -73,8 +113,8 @@
 
         @include tablet {
             @include flexbox(row, space-between, center);
-            width: 75%;
-            padding-left: $spacing-xsm;
+            width: 100%;
+            padding: 0 $spacing-xsm;
         }
     }
 
@@ -83,12 +123,14 @@
         gap: $spacing-xsm;
         border-bottom: 1px solid $secondary-color-mercury;
         padding: $spacing-xsm 0;
+        @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
 
         @include tablet {
             @include flexbox(row, space-between, center);
             width: 100%;
             padding: $spacing-xsm $spacing-xsm;
             // gap: 48px;
+            @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
         }
     }
 
@@ -101,17 +143,13 @@
     }
 
     &__date {
-        // flex: 1;
         font-weight: $font-weight-demi;
     }
 
     &__venue {
-        // max-width: 25%;
     }
 
     &__location {
-        // flex: 1;
-        // max-width: 25%;
     }
 }
 

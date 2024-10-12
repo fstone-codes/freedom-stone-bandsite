@@ -190,10 +190,10 @@ body {
     border-style: none;
 
     @include tablet {
-        // flex: 0 0 9.375rem;
-        @include flexbox(row, flex-start, center);
+        @include flexbox(row, center, center);
         flex: 1;
         max-width: 25%;
+        @include font-dt-body($primary-color-white, $font-weight-demi);
     }
 }
 

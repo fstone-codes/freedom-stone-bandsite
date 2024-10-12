@@ -50,10 +50,14 @@ let locationTitleEL = document.createElement('h4');
 locationTitleEL.classList.add('label', 'label--top');
 locationTitleEL.innerText = 'LOCATION';
 
+let emptyDivEL = document.createElement('div');
+emptyDivEL.classList.add('label', 'label--top');
+
 listEl.appendChild(labelDivEl);
 labelDivEl.appendChild(dateTitleEl);
 labelDivEl.appendChild(venueTitleEL);
 labelDivEl.appendChild(locationTitleEL);
+labelDivEl.appendChild(emptyDivEL);
 
 showList.forEach((showObj) => {
     let showWrap = document.createElement('li');
