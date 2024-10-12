@@ -7,7 +7,6 @@
 // }
 
 .hero {
-    @include flexbox(column, center, normal);
     height: 12rem;
     @include background-image-hero-index;
 
@@ -227,8 +226,8 @@
         width: 2.25rem;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        overflow: hidden;
         background-color: $secondary-color-mercury;
+        overflow: hidden;
 
         @include tablet {
             width: 3rem;
@@ -292,15 +291,16 @@
     }
 
     &__input {
-        width: 100%;
-        min-height: $spacing-med;
         margin-top: 0.25rem;
         padding: 0.75rem;
+        width: 100%;
+        min-height: $spacing-med;
         border: 1px solid $secondary-color-mercury;
         border-radius: 4px;
         background-color: $secondary-color-alabaster;
         font-family: "Avenir Next", sans-serif;
         color: $secondary-color-bandsite-black;
+        outline: none;
         resize: none;
 
         @include tablet {
@@ -310,8 +310,12 @@
         }
 
         &:focus {
-            outline: $secondary-color-bandsite-black solid 1px;
+            border: 1px solid $secondary-color-bandsite-black;
         }
+
+        // & ~ .error--active {
+        //     outline: #d22d2d solid 1px;
+        // }
 
         /* 
 
@@ -331,18 +335,19 @@
     }
 }
 
+::placeholder {
+    color: $secondary-color-bandsite-black;
+}
+
 .error {
-    @include font-tiny(#d22d2d, $font-weight-demi);
+    @include font-body(#d22d2d);
+    font-weight: $font-weight-demi;
 
     @include tablet {
-        @include font-dt-tiny(#d22d2d);
+        @include font-dt-body(#d22d2d, $font-weight-demi);
     }
 
     &--active ~ .form__input {
-        outline: #d22d2d solid 1px;
+        border: 1px solid #d22d2d;
     }
-}
-
-::placeholder {
-    color: $secondary-color-bandsite-black;
 }

@@ -34,7 +34,7 @@ const showList = [
 // pointing to <ul> element (aka show list container)
 let listEl = document.querySelector(".shows__list");
 
-//
+// create elements for media query
 let labelDivEl = document.createElement("div");
 labelDivEl.classList.add("shows__label-container");
 
@@ -59,6 +59,7 @@ labelDivEl.appendChild(venueTitleEL);
 labelDivEl.appendChild(locationTitleEL);
 labelDivEl.appendChild(emptyDivEL);
 
+// create elements for each show / array object
 showList.forEach((showObj) => {
     let showWrap = document.createElement("li");
     showWrap.classList.add("shows__item");
@@ -115,6 +116,7 @@ showList.forEach((showObj) => {
     locationDivEl.appendChild(locationParaEl);
 });
 
+// add click event listener to show selected state in show list
 let allItems = document.querySelectorAll(".shows__item");
 
 allItems.forEach((item) => {

@@ -7,8 +7,6 @@
 // }
 
 .hero {
-    @include flexbox(column, center, normal);
-    gap: $spacing-xsm;
     height: 18.75rem;
     @include background-image-hero-shows;
 
@@ -45,24 +43,15 @@
         }
     }
 
-    // &__player-container {
-    // }
-
     &__player {
         position: relative;
         z-index: 1;
-        height: 7.25rem;
         margin-top: $spacing-xsm;
+        height: 7.25rem;
 
         @include tablet {
             margin-top: $spacing-sm;
             width: 25rem;
-        }
-
-        @include desktop {
-            // position: absolute;
-            // top: 0;
-            // right: 0;
         }
     }
 }
@@ -113,23 +102,22 @@
 
         @include tablet {
             @include flexbox(row, space-between, center);
-            width: 100%;
             padding: 0 $spacing-xsm;
+            width: 100%;
         }
     }
 
     &__item {
         @include flexbox(column, normal, normal);
         gap: $spacing-xsm;
-        border-bottom: 1px solid $secondary-color-mercury;
         padding: $spacing-xsm 0;
+        border-bottom: 1px solid $secondary-color-mercury;
         @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
 
         @include tablet {
             @include flexbox(row, space-between, center);
             width: 100%;
             padding: $spacing-xsm $spacing-xsm;
-            // gap: 48px;
             @include font-dt-body($secondary-color-bandsite-black, $font-weight-regular);
         }
 
@@ -176,6 +164,7 @@
 
     &--repeated {
         margin-bottom: 0.5rem;
+
         @include tablet {
             display: none;
         }

@@ -160,6 +160,11 @@ body {
 
 .hero {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: normal;
+  gap: 1rem;
   padding: 0 1rem;
 }
 @media (min-width: 768px) {
@@ -198,21 +203,14 @@ body {
   }
 }
 
-.btn-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: normal;
-  align-items: normal;
-}
-
 .btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
   min-width: 9.375rem;
   height: 40px;
-  padding: 0 2rem;
   border-radius: 4px;
   border-style: none;
   background-color: #323232;
@@ -428,11 +426,6 @@ body {
   font-weight: 700;
 }
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: normal;
-  gap: 1rem;
   height: 18.75rem;
   background-image: url("../../assets/images/hero-shows.jpg");
   background-position: center;
@@ -486,8 +479,8 @@ body {
 .hero__player {
   position: relative;
   z-index: 1;
-  height: 7.25rem;
   margin-top: 1rem;
+  height: 7.25rem;
 }
 @media (min-width: 768px) {
   .hero__player {
@@ -495,6 +488,7 @@ body {
     width: 25rem;
   }
 }
+
 .shows {
   display: flex;
   flex-direction: column;
@@ -564,8 +558,8 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 0 1rem;
+    width: 100%;
   }
 }
 .shows__item {
@@ -574,8 +568,8 @@ body {
   justify-content: normal;
   align-items: normal;
   gap: 1rem;
-  border-bottom: 1px solid #e1e1e1;
   padding: 1rem 0;
+  border-bottom: 1px solid #e1e1e1;
   color: #000000;
   font-size: 0.875rem;
   font-weight: 400;

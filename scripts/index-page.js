@@ -28,13 +28,11 @@ function createCommentPost(commentObj) {
     commentWrap.classList.add("comment__item");
 
     let imgDivEl = document.createElement("div");
-    imgDivEl.classList.add(
-        "comment__image-container",
-        "comment__image-container--list"
-    );
+    imgDivEl.classList.add("comment__image-container", "comment__image-container--list");
 
-    let imgEl = document.createElement("img");
-    imgEl.classList.add("comment__image");
+    // use if image content is provided
+    // let imgEl = document.createElement("img");
+    // imgEl.classList.add("comment__image");
 
     let infoDivEl = document.createElement("div");
     infoDivEl.classList.add("comment__content-container");
@@ -60,7 +58,8 @@ function createCommentPost(commentObj) {
     commentWrap.appendChild(infoDivEl);
     commentWrap.appendChild(commDivEl);
 
-    imgDivEl.appendChild(imgEl);
+    // use if image content is provided
+    // imgDivEl.appendChild(imgEl);
 
     infoDivEl.appendChild(nameParaEl);
     infoDivEl.appendChild(dateParaEl);
@@ -98,6 +97,7 @@ form.addEventListener("submit", (e) => {
         day: "2-digit",
     });
 
+    // validate form submission by checking for empty strings
     let allErrors = document.querySelectorAll(".error");
     let nameError = allErrors[0];
     let commentError = allErrors[1];
@@ -110,6 +110,7 @@ form.addEventListener("submit", (e) => {
 
     errors = [];
 
+    // notify users of invalid inputs
     if (valueUserName === "") {
         errors.push("Please enter a valid name");
     }
