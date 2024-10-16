@@ -1,23 +1,34 @@
-const commentList = [
-    {
-        userName: "Victor Pinto",
-        commentDate: "11/02/2023",
-        userComment:
-            "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    {
-        userName: "Christina Cabrera",
-        commentDate: "10/28/2023",
-        userComment:
-            "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        userName: "Isaac Tadesse",
-        commentDate: "10/20/2023",
-        userComment:
-            "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    },
-];
+const API_KEY = "41d6b603-0b2e-403a-809e-fa896643e118";
+
+const bandSiteApi = new BandSiteApi(API_KEY);
+
+async function fetchAPI() {
+    try {
+        const response = await axios.get(
+            "https://unit-2-project-api-25c1595833b2.herokuapp.com/register"
+        );
+
+        // console.log(response);
+        // console.log(response.data);
+    } catch (error) {
+        console.error();
+    }
+}
+
+fetchAPI();
+
+async function testAPICall() {
+    try {
+        const comments = await bandSiteApi.getComments();
+        console.log(comments);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+testAPICall();
+
+// =================================================================================
 
 // pointing to <ul> element (aka comment section container)
 let listEl = document.querySelector(".comment__list");
@@ -39,18 +50,18 @@ function createCommentPost(commentObj) {
 
     let nameParaEl = document.createElement("p");
     nameParaEl.classList.add("comment__name");
-    nameParaEl.innerText = commentObj.userName;
+    nameParaEl.innerText = commentObj.name;
 
     let dateParaEl = document.createElement("p");
     dateParaEl.classList.add("comment__date");
-    dateParaEl.innerText = commentObj.commentDate;
+    dateParaEl.innerText = commentObj.timestamp;
 
     let commDivEl = document.createElement("div");
     commDivEl.classList.add("comment__content-container");
 
     let commParaEl = document.createElement("p");
     commParaEl.classList.add("comment__comment-text");
-    commParaEl.innerText = commentObj.userComment;
+    commParaEl.innerText = commentObj.comment;
 
     listEl.appendChild(commentWrap);
 
@@ -68,13 +79,16 @@ function createCommentPost(commentObj) {
 }
 
 // create function that will render the comment posts for each array object
-function renderComment() {
-    // clear the children elements within <ul> to avoid duplication
-    listEl.replaceChildren();
+async function renderComment() {
+    try {
+        let commentData = await bandSiteApi.getComments();
 
-    commentList.forEach((commentItem) => {
-        createCommentPost(commentItem);
-    });
+        commentData.forEach((commentItem) => {
+            createCommentPost(commentItem);
+        });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 // invoke the function to ensure existing comments are initially rendered
