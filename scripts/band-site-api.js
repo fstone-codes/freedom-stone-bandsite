@@ -25,4 +25,18 @@ class BandSiteApi {
             console.error(error);
         }
     }
+
+    async getShows() {
+        try {
+            const response = await axios.get(`${this.baseUrl}/showdates${this.apiKey}`);
+
+            const sortedResponse = response.data.sort((a, b) => {
+                return a.timestamp - b.timestamp;
+            });
+
+            return sortedResponse;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }

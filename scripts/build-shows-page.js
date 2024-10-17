@@ -1,35 +1,22 @@
-const showList = [
-    {
-        showDate: "Mon Sept 09 2024",
-        showVenue: "Ronald Lane",
-        showLocation: "San Francisco, CA",
-    },
-    {
-        showDate: "Tue Sept 17 2024",
-        showVenue: "Pier 3 East",
-        showLocation: "San Francisco, CA",
-    },
-    {
-        showDate: "Sat Oct 12 2024",
-        showVenue: "View Lounge",
-        showLocation: "San Francisco, CA",
-    },
-    {
-        showDate: "Sat Nov 16 2024",
-        showVenue: "Hyatt Agency",
-        showLocation: "San Francisco, CA",
-    },
-    {
-        showDate: "Fri Nov 29 2024",
-        showVenue: "Moscow Center",
-        showLocation: "San Francisco, CA",
-    },
-    {
-        showDate: "Wed Dec 18 2024",
-        showVenue: "Press Club",
-        showLocation: "San Francisco, CA",
-    },
-];
+const API_KEY = "41d6b603-0b2e-403a-809e-fa896643e118";
+
+const bandSiteApi = new BandSiteApi(API_KEY);
+
+// ============================================================================
+
+async function testApiCall() {
+    try {
+        const response = await bandSiteApi.getShows();
+
+        console.log(response);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+testApiCall();
+
+// ============================================================================
 
 // pointing to <ul> element (aka show list container)
 let listEl = document.querySelector(".shows__list");
@@ -59,62 +46,72 @@ labelDivEl.appendChild(venueTitleEL);
 labelDivEl.appendChild(locationTitleEL);
 labelDivEl.appendChild(emptyDivEL);
 
-// create elements for each show / array object
-showList.forEach((showObj) => {
-    let showWrap = document.createElement("li");
-    showWrap.classList.add("shows__item");
+async function renderShow() {
+    try {
+        const showList = await bandSiteApi.getShows();
 
-    let dateDivEl = document.createElement("div");
-    dateDivEl.classList.add("shows__content-container");
+        // create elements for each show / array object
+        showList.forEach((showObj) => {
+            let showWrap = document.createElement("li");
+            showWrap.classList.add("shows__item");
 
-    dateTitleEl = document.createElement("h4");
-    dateTitleEl.classList.add("label", "label--repeated");
-    dateTitleEl.innerText = "DATES";
+            let dateDivEl = document.createElement("div");
+            dateDivEl.classList.add("shows__content-container");
 
-    let dateParaEl = document.createElement("p");
-    dateParaEl.classList.add("shows__date");
-    dateParaEl.innerText = showObj.showDate;
+            dateTitleEl = document.createElement("h4");
+            dateTitleEl.classList.add("label", "label--repeated");
+            dateTitleEl.innerText = "DATES";
 
-    let venueDivEl = document.createElement("div");
-    venueDivEl.classList.add("shows__content-container");
+            let dateParaEl = document.createElement("p");
+            dateParaEl.classList.add("shows__date");
+            dateParaEl.innerText = showObj.date;
 
-    venueTitleEL = document.createElement("h4");
-    venueTitleEL.classList.add("label", "label--repeated");
-    venueTitleEL.innerText = "VENUE";
+            let venueDivEl = document.createElement("div");
+            venueDivEl.classList.add("shows__content-container");
 
-    let venueParaEl = document.createElement("p");
-    venueParaEl.classList.add("shows__venue");
-    venueParaEl.innerText = showObj.showVenue;
+            venueTitleEL = document.createElement("h4");
+            venueTitleEL.classList.add("label", "label--repeated");
+            venueTitleEL.innerText = "VENUE";
 
-    let locationDivEl = document.createElement("div");
-    locationDivEl.classList.add("shows__content-container");
+            let venueParaEl = document.createElement("p");
+            venueParaEl.classList.add("shows__venue");
+            venueParaEl.innerText = showObj.place;
 
-    locationTitleEL = document.createElement("h4");
-    locationTitleEL.classList.add("label", "label--repeated");
-    locationTitleEL.innerText = "LOCATION";
+            let locationDivEl = document.createElement("div");
+            locationDivEl.classList.add("shows__content-container");
 
-    let locationParaEl = document.createElement("p");
-    locationParaEl.classList.add("shows__location");
-    locationParaEl.innerText = showObj.showLocation;
+            locationTitleEL = document.createElement("h4");
+            locationTitleEL.classList.add("label", "label--repeated");
+            locationTitleEL.innerText = "LOCATION";
 
-    let btnDivEl = document.createElement("div");
-    btnDivEl.classList.add("btn");
-    btnDivEl.innerText = "BUY TICKETS";
+            let locationParaEl = document.createElement("p");
+            locationParaEl.classList.add("shows__location");
+            locationParaEl.innerText = showObj.location;
 
-    listEl.appendChild(showWrap);
+            let btnDivEl = document.createElement("div");
+            btnDivEl.classList.add("btn");
+            btnDivEl.innerText = "BUY TICKETS";
 
-    showWrap.appendChild(dateDivEl);
-    showWrap.appendChild(venueDivEl);
-    showWrap.appendChild(locationDivEl);
-    showWrap.appendChild(btnDivEl);
+            listEl.appendChild(showWrap);
 
-    dateDivEl.appendChild(dateTitleEl);
-    dateDivEl.appendChild(dateParaEl);
-    venueDivEl.appendChild(venueTitleEL);
-    venueDivEl.appendChild(venueParaEl);
-    locationDivEl.appendChild(locationTitleEL);
-    locationDivEl.appendChild(locationParaEl);
-});
+            showWrap.appendChild(dateDivEl);
+            showWrap.appendChild(venueDivEl);
+            showWrap.appendChild(locationDivEl);
+            showWrap.appendChild(btnDivEl);
+
+            dateDivEl.appendChild(dateTitleEl);
+            dateDivEl.appendChild(dateParaEl);
+            venueDivEl.appendChild(venueTitleEL);
+            venueDivEl.appendChild(venueParaEl);
+            locationDivEl.appendChild(locationTitleEL);
+            locationDivEl.appendChild(locationParaEl);
+        });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+renderShow();
 
 // add click event listener to show selected state in show list
 let allItems = document.querySelectorAll(".shows__item");
