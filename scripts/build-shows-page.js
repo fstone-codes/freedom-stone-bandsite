@@ -64,7 +64,7 @@ async function renderShow() {
 
             let dateParaEl = document.createElement("p");
             dateParaEl.classList.add("shows__date");
-            dateParaEl.innerText = showObj.date;
+            dateParaEl.innerText = convertDate(showObj.date);
 
             let venueDivEl = document.createElement("div");
             venueDivEl.classList.add("shows__content-container");
@@ -113,8 +113,18 @@ async function renderShow() {
 
 renderShow();
 
+// create function to convert EPOCH datestamp into the appropriate format per mockup
+function convertDate(datestamp) {
+    let showDate = new Date(datestamp);
+    let format = { weekday: "short", month: "short", day: "2-digit", year: "numeric" };
+    formattedDate = showDate.toLocaleDateString("en-US", format).split(",").join("");
+
+    return formattedDate;
+}
+
 // add click event listener to show selected state in show list
 let allItems = document.querySelectorAll(".shows__item");
+console.log(allItems);
 
 allItems.forEach((item) => {
     item.addEventListener("click", (e) => {
