@@ -2,21 +2,6 @@ const API_KEY = "41d6b603-0b2e-403a-809e-fa896643e118";
 
 const bandSiteApi = new BandSiteApi(API_KEY);
 
-async function fetchAPI() {
-    try {
-        const response = await axios.get(
-            "https://unit-2-project-api-25c1595833b2.herokuapp.com/register"
-        );
-
-        // console.log(response);
-        // console.log(response.data);
-    } catch (error) {
-        console.error();
-    }
-}
-
-fetchAPI();
-
 async function testAPICall() {
     try {
         const comments = await bandSiteApi.getComments();
@@ -24,9 +9,22 @@ async function testAPICall() {
     } catch (error) {
         console.error(error);
     }
+    try {
+        await bandSiteApi.postComment({
+            name: "Jane Doe",
+            comment:
+                "This is some text that I have created for the purposes of testing this API call into a postComment async function. Hopefully it works!",
+        });
+
+        const updatedComments = await bandSiteApi.getComments();
+
+        console.log(updatedComments);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
-testAPICall();
+// testAPICall();
 
 // =================================================================================
 
@@ -84,6 +82,7 @@ async function renderComment() {
         let commentData = await bandSiteApi.getComments();
 
         commentData.forEach((commentItem) => {
+            convertTime(commentItem.timestamp);
             createCommentPost(commentItem);
         });
     } catch (error) {
@@ -155,9 +154,9 @@ form.addEventListener("submit", (e) => {
     } else {
         // add the new comment post to the beginning of the array of object (i.e. index 0)
         commentList.unshift({
-            userName: valueUserName,
-            userComment: valueUserComment,
-            commentDate: formattedDate,
+            name: valueUserName,
+            comment: valueUserComment,
+            timestamp: formattedDate,
         });
 
         // invoke the render function again to display the newly submitted comment
@@ -167,3 +166,49 @@ form.addEventListener("submit", (e) => {
         form.reset();
     }
 });
+
+function convertTime(timestamp) {
+    let timeDiff = Date.now() - timestamp;
+    let calculatedDiff;
+    let formattedDate;
+
+    if (timeDiff < 60000) {
+        calculatedDiff = Math.floor(timeDiff / 1000);
+        if (calculatedDiff === 1) {
+            formattedDate = `${calculatedDiff} second ago`;
+        } else {
+            formattedDate = `${calculatedDiff} seconds ago`;
+        }
+    } else if (timeDiff >= 60000 && timeDiff < 3600000) {
+        calculatedDiff = Math.floor(timeDiff / 60000);
+        if (calculatedDiff === 1) {
+            formattedDate = `${calculatedDiff} minute ago`;
+        } else {
+            formattedDate = `${calculatedDiff} minutes ago`;
+        }
+    } else if (timeDiff >= 3600000 && timeDiff < 86400000) {
+        calculatedDiff = Math.floor(timeDiff / 3600000);
+        if (calculatedDiff === 1) {
+            formattedDate = `${calculatedDiff} hour ago`;
+        } else {
+            formattedDate = `${calculatedDiff} hours ago`;
+        }
+    } else if (timeDiff >= 86400000 && timeDiff < 604800000) {
+        calculatedDiff = Math.floor(timeDiff / 86400000);
+        if (calculatedDiff === 1) {
+            formattedDate = `${calculatedDiff} day ago`;
+        } else {
+            formattedDate = `${calculatedDiff} days ago`;
+        }
+    } else {
+        let submissionDate = new Date(timestamp);
+        formattedDate = submissionDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+        });
+    }
+    return formattedDate;
+}
+
+console.log(convertTime(1729124091000));
