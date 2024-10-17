@@ -26,6 +26,22 @@ class BandSiteApi {
         }
     }
 
+    async addLike(id) {
+        try {
+            await axios.put(`${this.baseUrl}/comments/:${id}/like${this.apiKey}`);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    async deleteComment(id) {
+        try {
+            await axios.delete(`${this.baseUrl}/comments/:${id}${this.apiKey}`);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
     async getShows() {
         try {
             const response = await axios.get(`${this.baseUrl}/showdates${this.apiKey}`);

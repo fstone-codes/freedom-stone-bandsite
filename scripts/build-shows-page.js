@@ -106,6 +106,18 @@ async function renderShow() {
             locationDivEl.appendChild(locationTitleEL);
             locationDivEl.appendChild(locationParaEl);
         });
+
+        // add click event listener to show selected state in show list
+        let allItems = document.querySelectorAll(".shows__item");
+
+        allItems.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                allItems.forEach((removalItem) => {
+                    removalItem.classList.remove("shows__item--selected");
+                });
+                e.currentTarget.classList.add("shows__item--selected");
+            });
+        });
     } catch (error) {
         console.error(error);
     }
@@ -121,16 +133,3 @@ function convertDate(datestamp) {
 
     return formattedDate;
 }
-
-// add click event listener to show selected state in show list
-let allItems = document.querySelectorAll(".shows__item");
-console.log(allItems);
-
-allItems.forEach((item) => {
-    item.addEventListener("click", (e) => {
-        allItems.forEach((removalItem) => {
-            removalItem.classList.remove("shows__item--selected");
-        });
-        e.currentTarget.classList.add("shows__item--selected");
-    });
-});
