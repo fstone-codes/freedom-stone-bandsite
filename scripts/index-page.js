@@ -134,11 +134,13 @@ function convertTime(timestamp) {
 async function renderComment() {
     try {
         let commentData = await bandSiteApi.getComments();
-        console.log(commentData);
 
         commentData.forEach((commentItem) => {
             createCommentPost(commentItem);
         });
+
+        createLikeEL();
+        createDeleteEL();
     } catch (error) {
         console.error(error);
     }
@@ -160,39 +162,49 @@ async function addComment(newCommentObj) {
     }
 }
 
-// add click event listener to show selected state in show list
-let likeIcons = document.querySelectorAll(".comment__like");
+// add event click event listener within a function
+function createLikeEL() {
+    let likeIcons = document.querySelectorAll(".comment__like");
 
-likeIcons.forEach((item) => {
-    item.addEventListener("click", (e) => {
-        const likeEl = e.currentTarget;
-        const likeId = likeEl.getAttribute("data-id");
-        console.log(likeEl);
-        console.log(likeId);
-        try {
-            // allIcons.forEach((removalItem) => {
-            //     removalItem.classList.remove(".comment__icon-container--selected");
-            // });
-            // e.currentTarget.classList.add("comment__icon-container--selected");
-            // return likeId;
-            // await bandSiteApi.addLike(likeId);
-            // listEl.replaceChildren();
-            // renderComment();
-        } catch (error) {
-            console.error(error);
-        }
+    likeIcons.forEach((item) => {
+        item.addEventListener("click", async (e) => {
+            const likeEl = e.currentTarget;
+
+            // store the comment id of target in variable
+            const likeId = likeEl.getAttribute("data-id");
+            try {
+                await bandSiteApi.addLike(likeId);
+
+                listEl.replaceChildren();
+
+                renderComment();
+            } catch (error) {
+                console.error(error);
+            }
+        });
     });
-});
+}
 
-// async function likeComment() {
-//     try {
+// add event click event listener within a function
+function createDeleteEL() {
+    let deleteIcons = document.querySelectorAll(".comment__delete");
 
-//     } catch (error) {
-//         console.error(error);
-//     }
-// }
+    deleteIcons.forEach((item) => {
+        item.addEventListener("click", async (e) => {
+            const deleteEl = e.currentTarget;
 
-// likeComment();
+            // store the comment id of target in variable
+            const deleteId = deleteEl.getAttribute("data-id");
+            try {
+                await bandSiteApi.deleteComment(deleteId);
+                listEl.replaceChildren();
+                renderComment();
+            } catch (error) {
+                console.error(error);
+            }
+        });
+    });
+}
 
 // ============================================================================
 
