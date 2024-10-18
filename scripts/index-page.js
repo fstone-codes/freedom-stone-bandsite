@@ -16,10 +16,6 @@ function createCommentPost(commentObj) {
     let imgDivEl = document.createElement("div");
     imgDivEl.classList.add("comment__image-container", "comment__image-container--list");
 
-    // use if image content is provided
-    // let imgEl = document.createElement("img");
-    // imgEl.classList.add("comment__image");
-
     let infoDivEl = document.createElement("div");
     infoDivEl.classList.add("comment__content-container");
 
@@ -66,9 +62,6 @@ function createCommentPost(commentObj) {
     commentWrap.appendChild(infoDivEl);
     commentWrap.appendChild(commDivEl);
     commentWrap.appendChild(iconDivEl);
-
-    // use if image content is provided
-    // imgDivEl.appendChild(imgEl);
 
     infoDivEl.appendChild(nameParaEl);
     infoDivEl.appendChild(dateParaEl);
@@ -197,7 +190,9 @@ function createDeleteEL() {
             const deleteId = deleteEl.getAttribute("data-id");
             try {
                 await bandSiteApi.deleteComment(deleteId);
+
                 listEl.replaceChildren();
+
                 renderComment();
             } catch (error) {
                 console.error(error);
