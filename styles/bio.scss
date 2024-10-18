@@ -281,22 +281,35 @@
         @include flexbox(row-reverse, space-between, center);
         height: 1.5rem;
         aspect-ratio: 1.5 / 1;
-        cursor: pointer;
-
-        &:hover .comment__like {
-            // background-color: $secondary-color-alabaster;
-            height: 1.5rem;
-        }
     }
 
     &__like {
         height: 1rem;
         aspect-ratio: 1 / 1;
+        cursor: pointer;
+
+        &:hover {
+            height: 1.25rem;
+        }
+
+        &:active {
+            filter: invert(20%) sepia(95%) saturate(2736%) hue-rotate(282deg) brightness(81%)
+                contrast(111%);
+        }
     }
 
     &__delete {
         height: 1rem;
         aspect-ratio: 1 / 1;
+
+        &:hover {
+            height: 1.25rem;
+        }
+
+        &:active {
+            filter: invert(20%) sepia(95%) saturate(2736%) hue-rotate(282deg) brightness(81%)
+                contrast(111%);
+        }
     }
 }
 
@@ -334,16 +347,6 @@
         &:focus {
             border: 1px solid $secondary-color-bandsite-black;
         }
-
-        /* 
-
-        // Alternate way to show red border (*must be paired with required attribute in form input/textarea elements)
-
-        &:user-invalid {
-            outline: #d22d2d solid 1px;
-        } 
-            
-        */
     }
 
     &__container--btn {
