@@ -787,6 +787,26 @@ body {
 .comment__date {
   color: #afafaf;
 }
+.comment__icon-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.5rem;
+  aspect-ratio: 1.5/1;
+  cursor: pointer;
+}
+.comment__icon-container:hover .comment__like {
+  height: 1.5rem;
+}
+.comment__like {
+  height: 1rem;
+  aspect-ratio: 1/1;
+}
+.comment__delete {
+  height: 1rem;
+  aspect-ratio: 1/1;
+}
 
 .form {
   display: flex;

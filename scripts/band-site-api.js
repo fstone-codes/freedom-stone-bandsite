@@ -28,7 +28,7 @@ class BandSiteApi {
 
     async addLike(id) {
         try {
-            await axios.put(`${this.baseUrl}/comments/:${id}/like${this.apiKey}`);
+            await axios.put(`${this.baseUrl}/comments/${id}/like${this.apiKey}`);
         } catch (error) {
             console.error(error);
         }
@@ -36,7 +36,7 @@ class BandSiteApi {
 
     async deleteComment(id) {
         try {
-            await axios.delete(`${this.baseUrl}/comments/:${id}${this.apiKey}`);
+            await axios.delete(`${this.baseUrl}/comments/${id}${this.apiKey}`);
         } catch (error) {
             console.error(error);
         }

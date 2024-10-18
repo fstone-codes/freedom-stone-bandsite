@@ -276,6 +276,28 @@
 
     // &__comment-text {
     // }
+
+    &__icon-container {
+        @include flexbox(row-reverse, space-between, center);
+        height: 1.5rem;
+        aspect-ratio: 1.5 / 1;
+        cursor: pointer;
+
+        &:hover .comment__like {
+            // background-color: $secondary-color-alabaster;
+            height: 1.5rem;
+        }
+    }
+
+    &__like {
+        height: 1rem;
+        aspect-ratio: 1 / 1;
+    }
+
+    &__delete {
+        height: 1rem;
+        aspect-ratio: 1 / 1;
+    }
 }
 
 .form {

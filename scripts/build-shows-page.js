@@ -4,20 +4,6 @@ const bandSiteApi = new BandSiteApi(API_KEY);
 
 // ============================================================================
 
-async function testApiCall() {
-    try {
-        const response = await bandSiteApi.getShows();
-
-        console.log(response);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
-testApiCall();
-
-// ============================================================================
-
 // pointing to <ul> element (aka show list container)
 let listEl = document.querySelector(".shows__list");
 

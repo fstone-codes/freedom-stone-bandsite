@@ -11,6 +11,7 @@ let listEl = document.querySelector(".comment__list");
 function createCommentPost(commentObj) {
     let commentWrap = document.createElement("li");
     commentWrap.classList.add("comment__item");
+    commentWrap.setAttribute("data-id", commentObj.id);
 
     let imgDivEl = document.createElement("div");
     imgDivEl.classList.add("comment__image-container", "comment__image-container--list");
@@ -37,11 +38,34 @@ function createCommentPost(commentObj) {
     commParaEl.classList.add("comment__comment-text");
     commParaEl.innerText = commentObj.comment;
 
+    let iconDivEl = document.createElement("div");
+    iconDivEl.classList.add("comment__content-container");
+
+    let likeSpanEl = document.createElement("span");
+    likeSpanEl.classList.add("comment__icon-container");
+    likeSpanEl.innerText = commentObj.likes;
+
+    let likeImg = document.createElement("img");
+    likeImg.classList.add("comment__like");
+    likeImg.setAttribute("src", "./assets/icons/icon-like.svg");
+    likeImg.setAttribute("alt", "like button");
+    likeImg.setAttribute("data-id", commentObj.id);
+
+    let deleteSpanEl = document.createElement("span");
+    deleteSpanEl.classList.add("comment__icon-container");
+
+    let deleteImg = document.createElement("img");
+    deleteImg.classList.add("comment__delete");
+    deleteImg.setAttribute("src", "./assets/icons/icon-delete.svg");
+    deleteImg.setAttribute("alt", "delete button");
+    deleteImg.setAttribute("data-id", commentObj.id);
+
     listEl.appendChild(commentWrap);
 
     commentWrap.appendChild(imgDivEl);
     commentWrap.appendChild(infoDivEl);
     commentWrap.appendChild(commDivEl);
+    commentWrap.appendChild(iconDivEl);
 
     // use if image content is provided
     // imgDivEl.appendChild(imgEl);
@@ -50,6 +74,13 @@ function createCommentPost(commentObj) {
     infoDivEl.appendChild(dateParaEl);
 
     commDivEl.appendChild(commParaEl);
+
+    iconDivEl.appendChild(likeSpanEl);
+    iconDivEl.appendChild(deleteSpanEl);
+
+    likeSpanEl.appendChild(likeImg);
+
+    deleteSpanEl.appendChild(deleteImg);
 }
 
 // create function to convert EPOCH timestamp into a dynamic, more human-readable timestamp
@@ -103,6 +134,7 @@ function convertTime(timestamp) {
 async function renderComment() {
     try {
         let commentData = await bandSiteApi.getComments();
+        console.log(commentData);
 
         commentData.forEach((commentItem) => {
             createCommentPost(commentItem);
@@ -127,6 +159,40 @@ async function addComment(newCommentObj) {
         console.error(error);
     }
 }
+
+// add click event listener to show selected state in show list
+let likeIcons = document.querySelectorAll(".comment__like");
+
+likeIcons.forEach((item) => {
+    item.addEventListener("click", (e) => {
+        const likeEl = e.currentTarget;
+        const likeId = likeEl.getAttribute("data-id");
+        console.log(likeEl);
+        console.log(likeId);
+        try {
+            // allIcons.forEach((removalItem) => {
+            //     removalItem.classList.remove(".comment__icon-container--selected");
+            // });
+            // e.currentTarget.classList.add("comment__icon-container--selected");
+            // return likeId;
+            // await bandSiteApi.addLike(likeId);
+            // listEl.replaceChildren();
+            // renderComment();
+        } catch (error) {
+            console.error(error);
+        }
+    });
+});
+
+// async function likeComment() {
+//     try {
+
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+
+// likeComment();
 
 // ============================================================================
 
